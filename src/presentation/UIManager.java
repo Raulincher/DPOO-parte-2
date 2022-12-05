@@ -19,13 +19,13 @@ public class UIManager {
 
 
     public void showMainMenu(){
-        System.out.println("The tavern keeper looks at you and says:\n");
-        System.out.println("\"Welcome adventurer! How can I help you?\"\n");
+        System.out.println("The tavern keeper looks at you and says:");
+        System.out.println("“Welcome adventurer! How can I help you?”");
         System.out.println("\n\t1) Character creation");
-        System.out.println("\n\t2) List characters");
-        System.out.println("\n\t3) Create an adventure");
-        System.out.println("\n\t4) Start an adventure");
-        System.out.println("\n\t5) Exit");
+        System.out.println("\t2) List characters");
+        System.out.println("\t3) Create an adventure");
+        System.out.println("\t4) Start an adventure");
+        System.out.println("\t5) Exit");
     }
 
     public void showMessage(String message){
@@ -45,7 +45,7 @@ public class UIManager {
                 System.out.print(message);
                 return scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("This isn't an integer!");
+                System.out.println("\nThis isn't an integer!\n");
             } finally {
                 scanner.nextLine();
             }

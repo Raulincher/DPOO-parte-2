@@ -8,7 +8,7 @@ import presentation.UIManager;
 import java.io.File;
 
 public class Main {
-    public static void main(){
+    public static void main(String args[]){
         File characterJSON = new File("characters.json");
         File monstersJSON = new File("monster.json");
 
