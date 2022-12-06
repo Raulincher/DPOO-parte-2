@@ -55,13 +55,13 @@ public class UIController {
 
     private void characterCreation(){
         int error = 0;
-        String CharacterName = "NoCharacterName";
-        String PlayerName = "NoPlayerName";
-        int CharacterLevel = 0;
+        String characterName = "NoCharacterName";
+        String playerName = "NoPlayerName";
+        int characterLevel = 0;
         uiManager.showMessage("Tavern keeper: “Oh, so you are new to this land.”\n" + "“What’s your name?”\n");
         while(error == 0) {
-            CharacterName = uiManager.askForString("-> Enter your name: ");
-            if(CharacterName.matches(".*\\d.*")){
+            characterName = uiManager.askForString("-> Enter your name: ");
+            if(characterName.matches(".*\\d.*")){
                 System.out.println("\nTavern keeper: “C'mon don't fool around and tell me your real name, will ya?”");
                 System.out.println("Character name can't include numbers or special characters\n");
             }else{
@@ -69,16 +69,16 @@ public class UIController {
             }
         }
 
-        uiManager.showMessage("\nTavern keeper: “Hello, " +  CharacterName + ", be welcome.”\n" + "“And now, if I may break the fourth wall, who is your Player?”\n");
+        uiManager.showMessage("\nTavern keeper: “Hello, " +  characterName + ", be welcome.”\n" + "“And now, if I may break the fourth wall, who is your Player?”\n");
 
-        PlayerName = uiManager.askForString("-> Enter the player’s name: ");
+        playerName = uiManager.askForString("-> Enter the player’s name: ");
 
         uiManager.showMessage("\nTavern keeper: “I see, I see...”\n" + "“Now, are you an experienced adventurer?”\n");
 
         error = 0;
         while(error == 0) {
-            CharacterLevel = uiManager.askForInteger("-> Enter the character’s level [1..10]: ");
-            if(CharacterLevel > 10 || CharacterLevel < 1){
+            characterLevel = uiManager.askForInteger("-> Enter the character’s level [1..10]: ");
+            if(characterLevel > 10 || characterLevel < 1){
                 System.out.println("\nTavern keeper: “I don't think you could be at that level, c'mon tell me the truth”");
                 System.out.println("Character level can't be lower than 1 or higher than 10\n");
             }
@@ -86,7 +86,7 @@ public class UIController {
                 error = 1;
             }
         }
-        uiManager.showMessage("\nTavern keeper: “Oh, so you are level "+ CharacterLevel + "!”\n" + "“Great, let me get a closer look at you...”\n");
+        uiManager.showMessage("\nTavern keeper: “Oh, so you are level "+ characterLevel + "!”\n" + "“Great, let me get a closer look at you...”\n");
         uiManager.showMessage("Generating your stats...\n");
 
         int[] body = characterManager.diceRoll();
@@ -105,8 +105,13 @@ public class UIController {
         String stat3 = characterManager.statCalculator(spirit);
         uiManager.showMessage("\t- Spirit: "+ stat3);
 
-        uiManager.showMessage("\nThe new character " + CharacterName + " has been created.\n");
+        int bodySum = Integer.parseInt(stat1);
+        int mindSum = Integer.parseInt(stat2);
+        int spiritSum = Integer.parseInt(stat3);
 
-        //characterManager.CreateCharacter(characterName, playerName, characterLevel, body, mind, spirit, characterClass);
+        uiManager.showMessage("\nThe new character " + characterName + " has been created.\n");
+        String characterClass = "Aventurer";
+
+        characterManager.createCharacter(characterName, playerName, characterLevel, bodySum, mindSum, spiritSum, characterClass);
     }
 }

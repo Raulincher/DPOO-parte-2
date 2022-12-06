@@ -9,6 +9,13 @@ public class CharacterManager {
     }
 
 
+    public void createCharacter(String characterName, String playerName, int characterLevel, int body, int mind, int spirit, String characterClass){
+
+
+
+
+
+    }
 
     public int[] diceRoll(){
 
