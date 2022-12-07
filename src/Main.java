@@ -19,7 +19,7 @@ public class Main {
         AdventureDAO adventureDAO = new AdventureDAO();
 
         //Business
-        CharacterManager characterManager = new CharacterManager(/*characterDAO*/);
+        CharacterManager characterManager = new CharacterManager(characterDAO);
         AdventureManager adventureManager = new AdventureManager(/*characterDAO, adventureDAO, monsterDAO*/);
 
         //presentation

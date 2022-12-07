@@ -1,19 +1,27 @@
 package business;
 
+import business.entities.Character;
+import persistance.CharacterDAO;
+
 import java.util.Random;
 
 public class CharacterManager {
 
-    public CharacterManager(){
+    CharacterDAO characterDAO;
 
+    public CharacterManager(CharacterDAO characterDAO){
+        this.characterDAO = characterDAO;
+    }
+
+    public Character[] getAllCharacters(){
+        return characterDAO.readCharacterJSON();
     }
 
 
     public void createCharacter(String characterName, String playerName, int characterLevel, int body, int mind, int spirit, String characterClass){
 
-
-
-
+        Character character = new Character(characterName, playerName, characterLevel, body, mind, spirit, characterClass);
+        characterDAO.saveCharacter(character);
 
     }
 
@@ -45,8 +53,42 @@ public class CharacterManager {
         }else {
             statBonus = "+3";
         }
-
-
         return statBonus;
+    }
+
+    public int experienceCalculator(int level){
+
+        int xp = 0;
+        if(level == 1){
+            xp = 0;
+        }else if(level == 2){
+            xp = 100;
+        }else if(level == 3){
+            xp = 200;
+        }else if(level == 4){
+            xp = 300;
+        }else if(level == 5){
+            xp = 400;
+        }else if(level == 6){
+            xp = 500;
+        }else if(level == 7){
+            xp = 600;
+        }else if(level == 8){
+            xp = 700;
+        }else if(level == 9){
+            xp = 800;
+        }else{
+            xp = 900;
+        }
+        return xp;
+    }
+
+
+    public Character[] filteredPlayers(String playerName){
+        return characterDAO.getCharacterByPlayer(playerName);
+    }
+
+    public void deleteCharacter(String characterName){
+        characterDAO.deleteCharacterByName(characterName);
     }
 }
