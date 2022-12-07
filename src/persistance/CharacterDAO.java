@@ -90,7 +90,36 @@ public class CharacterDAO {
         return character;
     }
 
+    public Character getCharacterByName(String characterName){
+        Character character = null;
+
+        return character;
+    }
     public void deleteCharacterByName(String characterName){
         //Aqui va el codigo de eliminar respecto nombre
+    }
+    public int getSpiritByName(String characterName){
+
+        int spirit = 0;
+        //Aqui va el codigo de buscar respecto nombre
+        return spirit;
+    }
+    public int getBodyByName(String characterName){
+
+        int body = 0;
+        //Aqui va el codigo de buscar respecto nombre
+        return body;
+    }
+    public int getMindByName(String characterName){
+
+        int mind = 0;
+        //Aqui va el codigo de buscar respecto nombre
+        return mind;
+    }
+    public int getXpByName(String characterName){
+
+        int xp = 0;
+        //Aqui va el codigo de buscar respecto nombre
+        return xp;
     }
 }

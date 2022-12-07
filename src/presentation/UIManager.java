@@ -28,6 +28,23 @@ public class UIManager {
         System.out.println("\t5) Exit");
     }
 
+
+    public void showMainMenuDissabled(){
+        System.out.println("The tavern keeper looks at you and says:");
+        System.out.println("“Welcome adventurer! How can I help you?”");
+        System.out.println("\n\t1) Character creation");
+        System.out.println("\t2) List characters");
+        System.out.println("\t3) Create an adventure");
+        System.out.println("\t4) Start an adventure (disabled: create 3 characters first)");
+        System.out.println("\t5) Exit");
+    }
+
+    public void showAdventureMenu(){
+        System.out.println("\n1. Add monster");
+        System.out.println("2. Remove monster");
+        System.out.println("3. Continue");
+    }
+
     public void showMessage(String message){
         System.out.println(message);
     }
