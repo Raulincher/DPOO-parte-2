@@ -7,6 +7,7 @@ import business.entities.Character;
 import business.entities.Monster;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class UIController {
     private final UIManager uiManager;
@@ -25,14 +26,14 @@ public class UIController {
     public void run() {
         int option;
         int i = 0;
-        int totalCharacters = 4;
+        int totalCharacters = 0;
 
         do {
-            //Character[] characters = characterManager.getAllCharacters();
-            /*for (Character character: characters) {
+            Character[] characters = characterManager.getAllCharacters();
+            for (Character character: characters) {
                 i++;
-                int totalCharacters = i;
-            }*/
+                totalCharacters = i;
+            }
             if(totalCharacters < 3){
                 uiManager.showMainMenuDissabled();
                 option = uiManager.askForInteger("\nYour answer: ");
@@ -147,29 +148,68 @@ public class UIController {
 
 
     private void listCharacters(){
+        int i = 0;
+
         uiManager.showMessage("Tavern keeper: “Lads! The Boss wants to see you, come here!”\n" + "“Who piques your interest?”");
         String playerName = uiManager.askForString("-> Enter the name of the Player to filter: \n");
 
         Character[] character = characterManager.filteredPlayers(playerName);
         if(character != null){
             uiManager.showMessage("You watch as some adventurers get up from their chairs and approach you.\n");
-            uiManager.showMessage("\t" + Arrays.toString(character));
+            while(i < character.length ){
+                uiManager.showMessage("\t" + (i+1) +"." + character[i].getCharacterName());
+                i++;
+            }
             uiManager.showMessage("\t\n0. Back");
 
-            int characterPicked = uiManager.askForInteger("Who would you like to meet [0..5]: ");
+            int characterPicked = uiManager.askForInteger("Who would you like to meet [0.." + character.length + "]: ");
             if(characterPicked != 0){
-                Character characterChoosen = character[characterPicked];
-                uiManager.showMessage("Tavern keeper: “Hey" + characterChoosen  + " get here; the boss wants to see you!”\n");
-                uiManager.showMessage("\t" + characterChoosen.toString());
+                Character characterChosen = character[characterPicked - 1];
+
+                int bodyChoseed = characterChosen.getBody();
+                String bodyIntToString;
+
+                if(bodyChoseed >=  0){
+                    bodyIntToString = "+" + bodyChoseed;
+                }else{
+                    bodyIntToString = String.valueOf(bodyChoseed);
+                }
+
+                int mindChoseed = characterChosen.getMind();
+                String mindIntToString;
+
+                if(mindChoseed >=  0){
+                    mindIntToString = "+" + mindChoseed;
+                }else{
+                    mindIntToString = String.valueOf(mindChoseed);
+                }
+
+                int spiritChoseed = characterChosen.getSpirit();
+                String spiritIntToString;
+
+                if(spiritChoseed >=  0){
+                    spiritIntToString = "+" + spiritChoseed;
+                }else{
+                    spiritIntToString = String.valueOf(spiritChoseed);
+                }
+
+                uiManager.showMessage("Tavern keeper: “Hey" + characterChosen.getCharacterName()  + " get here; the boss wants to see you!”\n");
+                uiManager.showMessage("* " + "Name:   " + characterChosen.getCharacterName());
+                uiManager.showMessage("* " + "Player: " + characterChosen.getPlayerName());
+                uiManager.showMessage("* " + "Class:  " + characterChosen.getCharacterClass());
+                uiManager.showMessage("* " + "XP:     " + characterChosen.getCharacterLevel());
+                uiManager.showMessage("* " + "Body:   " + bodyIntToString);
+                uiManager.showMessage("* " + "Mind:   " + mindIntToString);
+                uiManager.showMessage("* " + "Spirit: " + spiritIntToString);
 
                 uiManager.showMessage("[Enter name to delete, or press enter to cancel]\n");
-                String characterDelete = uiManager.askForString("Do you want to delete Jinx? ");
+                String characterDelete = uiManager.askForString("Do you want to delete " + characterChosen.getCharacterName() + " ? ");
 
-                if(characterDelete != null){
+                if(!Objects.equals(characterDelete, "")){
                     uiManager.showMessage("Tavern keeper: “I’m sorry kiddo, but you have to leave.”\n");
-                    uiManager.showMessage("Character" + characterChoosen + " left the Guild.\n");
+                    uiManager.showMessage("Character " + characterChosen.getCharacterName() + " left the Guild.\n");
 
-                    characterManager.deleteCharacter("name");
+                    characterManager.deleteCharacter(characterChosen.getCharacterName());
                 }
 
             }else{
@@ -235,18 +275,18 @@ public class UIController {
                         Monster[] monsters = monsterManager.getAllMonsters();
                         i = 0;
                         int totalMonsters = 0;
-                        /*for (Monster monster : monsters) {
-                            uiManager.showMessage((i + 1) + "." + monster.getMonsterName() + (monster.getMonsterChallenge()));
+                        for (Monster monster : monsters) {
+                            uiManager.showMessage((i + 1) + ". " + monster.getMonsterName() + " (" +monster.getMonsterChallenge()+ ")");
                             i++;
                             totalMonsters = i;
-                        }*/
+                        }
                         int monsterOption = uiManager.askForInteger("-> Choose a monster to add [1.." + totalMonsters + "]: ");
-                        monsterQuantity = uiManager.askForInteger("-> How many " + /*monsterName*/i + " do you want to add: ");
+                        monsterQuantity = uiManager.askForInteger("-> How many " + monsters[monsterOption - 1].getMonsterName() + " do you want to add: ");
                     }
 
                     //adventureManager.addMonster(Monster monster, int monsterQuantity);
                     case 2 -> {
-                        int monsterDeleteOption = uiManager.askForInteger(" Which monster do you want to delete: ");
+                        int monsterDeleteOption = uiManager.askForInteger("Which monster do you want to delete: ");
 
                         //metodo para que con la posicion del monstruo en la aventura pillemos el nombre y la cantidad
 
@@ -481,8 +521,4 @@ public class UIController {
         }
 
     }
-
-
-
-
 }

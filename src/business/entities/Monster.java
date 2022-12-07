@@ -1,43 +1,43 @@
 package business.entities;
 
 public class Monster {
-    String monsterName;
-    String monsterChallenge;
-    int monsterXpDrop;
-    int monsterHitPoints;
-    int monsterInitiative;
-    String monsterDice;
+    String name;
+    String challenge;
+    int experience;
+    int hitPoints;
+    int initiative;
+    String damageDice;
     String damageType;
 
     public Monster(String monsterName, String monsterChallenge, int monsterXpDrop, int monsterHitPoints, int monsterInitiative, String monsterDice, String damageType){
-        this.monsterName = monsterName;
-        this.monsterChallenge = monsterChallenge;
-        this.monsterXpDrop = monsterXpDrop;
-        this.monsterHitPoints = monsterHitPoints;
-        this.monsterInitiative = monsterInitiative;
-        this.monsterDice = monsterDice;
+        this.name = monsterName;
+        this.challenge = monsterChallenge;
+        this.experience = monsterXpDrop;
+        this.hitPoints = monsterHitPoints;
+        this.initiative = monsterInitiative;
+        this.damageDice = monsterDice;
         this.damageType = damageType;
     }
 
 
     public String getMonsterName() {
-        return monsterName;
+        return name;
     }
 
     public String getMonsterChallenge() {
-        return monsterChallenge;
+        return challenge;
     }
 
     public int getMonsterHitPoints() {
-        return monsterHitPoints;
+        return experience;
     }
 
     public int getMonsterInitiative() {
-        return monsterInitiative;
+        return hitPoints;
     }
 
     public int getMonsterXpDrop() {
-        return monsterXpDrop;
+        return initiative;
     }
 
     public String getDamageType() {
@@ -45,7 +45,7 @@ public class Monster {
     }
 
     public String getMonsterDice() {
-        return monsterDice;
+        return damageDice;
     }
 
 }

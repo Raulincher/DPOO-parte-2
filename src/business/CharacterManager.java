@@ -3,6 +3,7 @@ package business;
 import business.entities.Character;
 import persistance.CharacterDAO;
 
+import java.util.Locale;
 import java.util.Random;
 
 public class CharacterManager {
@@ -12,11 +13,6 @@ public class CharacterManager {
     public CharacterManager(CharacterDAO characterDAO){
         this.characterDAO = characterDAO;
     }
-
-    public Character[] getAllCharacters(){
-        return characterDAO.readCharacterJSON();
-    }
-
 
     public void createCharacter(String characterName, String playerName, int characterLevel, int body, int mind, int spirit, String characterClass){
         characterDAO.saveCharacter(new Character(characterName, playerName, characterLevel, body, mind, spirit, characterClass));
@@ -137,8 +133,6 @@ public class CharacterManager {
         int body = characterDAO.getBodyByName(characterName);
         int xp = characterDAO.getXpByName(characterName);
 
-
-
         life = (10 + body) * revertXpToLevel(xp);
 
         return life;
@@ -189,8 +183,33 @@ public class CharacterManager {
 
         return level;
     }
+    public Character[] getAllCharacters(){
+        return characterDAO.readCharacterJSON();
+    }
 
-    public Character[] filteredPlayers(String playerName){return characterDAO.getCharacterByPlayer(playerName);}
+    public Character[] filteredPlayers(String playerName){
+        Character[] characters = characterDAO.readCharacterJSON();
+        Character[] filteredCharacters = null;
+        int i = 0;
+        int j = 0;
+        if(playerName != ""){
+            while(i < characters.length){
+                if(characters[i].getPlayerName().toLowerCase(Locale.ROOT).contains(playerName.toLowerCase(Locale.ROOT))){
+                    filteredCharacters[j] = characters[i];
+                    j++;
+                    System.out.println("elpepep");
+                }
+                i++;
+            }
+        }else{
+
+            filteredCharacters = getAllCharacters();
+
+        }
+
+
+        return filteredCharacters;
+    }
     public Character filteredCharacter(String characterName){return characterDAO.getCharacterByName(characterName);}
     public void deleteCharacter(String characterName){
         characterDAO.deleteCharacterByName(characterName);

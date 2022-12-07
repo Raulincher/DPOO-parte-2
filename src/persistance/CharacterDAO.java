@@ -4,14 +4,18 @@ import business.entities.Character;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import org.json.simple.JSONObject;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 
 public class CharacterDAO {
@@ -25,21 +29,12 @@ public class CharacterDAO {
     public Character[] readCharacterJSON(){
 
         Character[] character = null;
+
         try {
-            Reader reader = Files.newBufferedReader(Paths.get("src/characters.json"));
-
-            // convert a JSON string to a User object
-            character = gson.fromJson(reader, Character[].class);
-
-            // close reader
-            reader.close();
+            character = gson.fromJson(new FileReader("src/characters.json"), Character[].class);
         } catch(Exception e) {
             e.printStackTrace();
         }
-
-
-        System.out.println(character[0]);
-
 
         return character;
 
@@ -77,17 +72,6 @@ public class CharacterDAO {
             e.printStackTrace();
         }
         System.out.println("Character generated correctly!");
-    }
-
-    public Character[] getCharacterByPlayer(String playerName){
-        Character[] character = null;
-        if(playerName != null){
-
-            //buscar por nombre
-        }else{
-            //devolver todos
-        }
-        return character;
     }
 
     public Character getCharacterByName(String characterName){
