@@ -31,6 +31,8 @@ public class MonsterDAO {
 
             if (currentMonsters != null) {
                 monsters.addAll(Arrays.asList(currentMonsters));
+            }else{
+                monsters = null;
             }
         }
         catch (FileNotFoundException ignored)

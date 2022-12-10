@@ -3,6 +3,7 @@ package presentation;
 import business.AdventureManager;
 import business.CharacterManager;
 import business.MonsterManager;
+import business.entities.Adventure;
 import business.entities.Character;
 import business.entities.Monster;
 
@@ -31,9 +32,14 @@ public class UIController {
         boolean validationMonster = true;
 
 
+        uiManager.showMessage("Welcome to Simple LSRPG.\n");
+        uiManager.showMessage("\nLoading data...");
+        ArrayList<Monster> monsters = monsterManager.getAllMonsters();
 
+        if(monsters.size() > 0){
 
-        if(validationMonster){
+            uiManager.showMessage("Data was successfully loaded.\n\n\n");
+
             do {
                 ArrayList<Character> characters = characterManager.getAllCharacters();
                 for (Character character: characters) {
@@ -53,7 +59,7 @@ public class UIController {
                 }
             } while(option != 5);
         }else{
-
+            uiManager.showMessage("Error: The monsters.json file can’t be accessed.\n");
         }
 
     }
@@ -224,11 +230,10 @@ public class UIController {
                 uiManager.showMessage("[Enter name to delete, or press enter to cancel]\n");
                 String characterDelete = uiManager.askForString("Do you want to delete " + characterChosen.getCharacterName() + " ? ");
 
-                if(!Objects.equals(characterDelete, "")){
+                boolean erased = characterManager.deleteCharacter(characterDelete);
+                if(erased){
                     uiManager.showMessage("Tavern keeper: “I’m sorry kiddo, but you have to leave.”\n");
                     uiManager.showMessage("Character " + characterChosen.getCharacterName() + " left the Guild.\n");
-
-                    characterManager.deleteCharacter(characterChosen.getCharacterName());
                 }
 
             }else{
@@ -278,7 +283,6 @@ public class UIController {
             encounterMonsters.add(i, new ArrayList<Monster>(1));
             encounterMonsters.get(i).add(0,null);
         }
-        System.out.println(encounterMonsters.size());
 
 
         while(auxEncounter < adventureEncounters){
@@ -321,77 +325,22 @@ public class UIController {
                         lastQuantity = monsterQuantity + lastQuantity;
                         monsterQuantity = uiManager.askForInteger("-> How many " + monsters.get(monsterOption - 1).getMonsterName() + " do you want to add: ");
 
-
-                        if(encounterMonsters.get(auxEncounter).get(0) == null){
-                            encounterMonsters.set(auxEncounter, new ArrayList<Monster>(monsterQuantity));
-                            lastQuantity = 0;
-                        }else{
-                            encounterMonsters.get(auxEncounter).ensureCapacity(lastQuantity);
-                        }
-                        System.out.println(encounterMonsters.get(auxEncounter).size());
-                        System.out.println(monsterQuantity);
-                        System.out.println(lastQuantity);
-
+                        lastQuantity = adventureManager.capacityEnsurance(auxEncounter, lastQuantity, monsterQuantity, encounterMonsters);
                         adventureManager.setMonstersEncounter(monsters, encounterMonsters, monsterOption, lastQuantity, monsterQuantity ,auxEncounter);
-                        int auxSize = monstersQuantityAndNames.size();
-                        if(monstersQuantityAndNames.size() == 0){
-                            monstersQuantityAndNames.add(0, monsters.get(monsterOption - 1).getMonsterName() + monsterQuantity);
-                        }
-                        else{
-                            for(j = 0; j < monstersQuantityAndNames.size(); j++){
-                                String auxName = monstersQuantityAndNames.get(j);
-                                String[] auxNameSplit = auxName.split("\\d+");
-
-                                if(!auxNameSplit[0].matches(monsters.get(monsterOption - 1).getMonsterName())){
-                                    if(auxSize == monstersQuantityAndNames.size() && j == monstersQuantityAndNames.size() - 1){
-                                        monstersQuantityAndNames.add(j + 1, monsters.get(monsterOption - 1).getMonsterName() + monsterQuantity);
-                                    }
-
-                                }else{
-                                    auxName = monstersQuantityAndNames.get(j);
-                                    int auxQuantity = Integer.parseInt(auxName.replaceAll("[^0-9]", ""));
-                                    if(auxSize == monstersQuantityAndNames.size()){
-                                        monstersQuantityAndNames.set(j, monsters.get(monsterOption - 1).getMonsterName() + (monsterQuantity + auxQuantity));
-                                        j = monstersQuantityAndNames.size();
-                                    }
-                                }
-
-                            }
-
-                        }
+                        adventureManager.setMonstersNames(monstersQuantityAndNames, monsters, monsterQuantity, monsterOption);
                     }
 
                     case 2 -> {
                         monsterDeleteOption = uiManager.askForInteger("Which monster do you want to delete: ");
                         int removedCounter = 0;
-
                         String monsterToBeErased = monstersQuantityAndNames.get(monsterDeleteOption - 1);
-                        String[] auxNameSplit = monsterToBeErased.split("\\d+");
-                        lastQuantity = lastQuantity + monsterQuantity;
 
-                        for(i = 0; i < lastQuantity; i++){
-                            System.out.println(i);
-                            System.out.println(removedCounter);
-                            String comparedName = encounterMonsters.get(auxEncounter).get(i - removedCounter).getMonsterName();
-
-                           if(comparedName.equals(auxNameSplit[0])){
-                               encounterMonsters.get(auxEncounter).remove(i - removedCounter);
-                               removedCounter++;
-                               if(encounterMonsters.get(auxEncounter).size() == 0){
-                                   encounterMonsters.get(auxEncounter).add(0,null);
-
-                               }
-                           }
-                        }
-                        monstersQuantityAndNames.remove(monsterDeleteOption - 1);
+                        removedCounter = adventureManager.removeMonsterFromEncounter(encounterMonsters, monstersQuantityAndNames, monsterDeleteOption, lastQuantity, monsterQuantity, auxEncounter);
 
                         lastQuantity = lastQuantity - removedCounter;
-                        System.out.println(lastQuantity);
 
-                        uiManager.showMessage(removedCounter + " " + auxNameSplit[0]  + " were removed from the encounter.");
+                        uiManager.showMessage(removedCounter + " " + monsterToBeErased  + " were removed from the encounter.");
                     }
-
-                    //adventureManager.removeMonster();
                     case 3 -> {
                         auxEncounter++;
                         monsterQuantity = 0;
@@ -435,22 +384,25 @@ public class UIController {
                 """);
         uiManager.showMessage("Available adventures:\n");
         //listar aventuras en el JSON
-        //adventureManager.getAdventures();
+        ArrayList<Adventure> adventures = adventureManager.getAdventuresList();
+        for(int i = 0; i < adventures.size(); i++){
+            uiManager.showMessage((i+1) + ". " + adventures.get(i).getAdventureName() );
+        }
+
         adventureSelection = uiManager.askForInteger("-> Choose an adventure: ");
+        uiManager.showMessage("Tavern keeper: “" + adventures.get(adventureSelection).getAdventureName() + " it is!" + "” \n “And how many people shall join you?”");
 
-
-        uiManager.showMessage("""
-                Tavern keeper: “adventureName”
-                “And how many people shall join you?”
-                """);
         characterQuantity = uiManager.askForInteger("-> Choose a number of characters [3..5]: ");
-
-
         uiManager.showMessage("Tavern keeper: “Great, " + characterQuantity + " it is.”\n" + "“Who among these lads shall join you?”");
+
         int i = 0, j = 0;
-        Character[] characterInParty = null;
+        ArrayList<Character> characterInParty = new ArrayList<>(characterQuantity);
         String characterName = null;
         String[] characterNamesList = null;
+
+        for(i = 0; i < characterQuantity; i++){
+            characterInParty.add(i, null);
+        }
 
         //creation of the adventure party
         do{
@@ -459,13 +411,10 @@ public class UIController {
             uiManager.showMessage("Your party (" + j + " / "+ characterQuantity +"):\n");
 
             while(i < characterQuantity){
-                //characterName = characterInParty[i].getCharacterName();
-                if(characterName == null){
+                if(characterInParty.get(i) == null){
                     uiManager.showMessage((i+1) + ". Empty");
-
                 }else{
-                    uiManager.showMessage((i+1) + "." + characterName);
-
+                    uiManager.showMessage((i+1) + "." + characterInParty.get(i).getCharacterName());
                 }
                 i++;
             }
@@ -473,20 +422,30 @@ public class UIController {
             uiManager.showMessage("Available characters:");
             i = 0;
             ArrayList<Character> characters = characterManager.getAllCharacters();
-            /*for (Character character: characters) {
+            for (Character character: characters) {
                 uiManager.showMessage((i+1) + "." + character.getCharacterName());
-                characterNamesList[i] = character.getCharacterName();
                 i++;
-            }*/
+            }
             int CharacterPartySelected = uiManager.askForInteger("-> Choose character "+ (j+1) + " in your party: \n");
+
+            characterInParty.set(j, characters.get(CharacterPartySelected - 1));
 
             //characterInParty[j] = characterManager.filteredCharacter(/*characterNamesList[CharacterPartySelected]*/"pepe");
             j++;
         }while(j < characterQuantity);
 
+        i = 0;
+        while(i < characterQuantity){
+            if(characterInParty.get(i) == null){
+                uiManager.showMessage((i+1) + ". Empty");
+            }else{
+                uiManager.showMessage((i+1) + "." + characterInParty.get(i).getCharacterName());
+            }
+            i++;
+        }
 
-        uiManager.showMessage("Tavern keeper: “Great, good luck on your adventure lads!”\n");
-        uiManager.showMessage("The “" + adventureSelection  +"” will start soon...\n");
+        uiManager.showMessage("\nTavern keeper: “Great, good luck on your adventure lads!”\n");
+        uiManager.showMessage("The “" + adventures.get(adventureSelection).getAdventureName()  +"” will start soon...\n");
         j = 0;
         int adventureEncounters = 0;
 

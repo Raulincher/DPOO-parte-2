@@ -120,19 +120,19 @@
     "spirit": -1
   },
   {
-    "name": "raul",
-    "player": "raulincher13",
-    "xp": 200,
-    "body": 0,
-    "mind": 1,
-    "spirit": 1
-  },
-  {
     "name": "raulillo",
     "player": "raulincher13",
     "xp": 900,
     "body": 2,
     "mind": 2,
     "spirit": 1
+  },
+  {
+    "name": "goku",
+    "player": "raulincher13",
+    "xp": 200,
+    "body": 1,
+    "mind": 2,
+    "spirit": 2
   }
 ]

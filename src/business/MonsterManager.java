@@ -15,4 +15,5 @@ public class MonsterManager {
     }
 
     public ArrayList<Monster> getAllMonsters(){return monsterDAO.getListOfMonsters();}
+
 }

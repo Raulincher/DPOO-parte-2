@@ -236,8 +236,7 @@ public class CharacterManager {
 
         return filteredCharacters;
     }
-    public Character filteredCharacter(String characterName){return characterDAO.getCharacterByName(characterName);}
-    public void deleteCharacter(String characterName){
-        characterDAO.deleteCharacterByName(characterName);
+    public boolean deleteCharacter(String characterName){
+       return characterDAO.deleteCharacterByName(characterName);
     }
 }

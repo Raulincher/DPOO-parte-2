@@ -16,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 
 public class CharacterDAO {
@@ -36,6 +37,35 @@ public class CharacterDAO {
                 e.printStackTrace();
             }
         }
+    }
+
+    public boolean deleteCharacterByName(String name)
+    {
+        Character[] currentCharacters;
+        FileWriter writer;
+
+        boolean erased = false;
+
+        try
+        {
+            currentCharacters = gson.fromJson(gson.newJsonReader(new FileReader(String.valueOf(characterPath))), Character[].class);
+            ArrayList<Character> characters = new ArrayList<>(Arrays.asList(currentCharacters));
+            for (int i = 0; i < characters.size(); i++) {
+                if (Objects.equals(name, characters.get(i).getCharacterName()))
+                {
+                    characters.remove(i);
+                    erased = true;
+                    i = characters.size();
+                }
+            }
+
+            writer = new FileWriter(String.valueOf(characterPath));
+            gson.toJson(characters, writer);
+            writer.close();
+        }
+        catch (IOException ignored) {}
+
+        return erased;
     }
 
     public ArrayList<Character> readCharacterJSON()
@@ -97,14 +127,7 @@ public class CharacterDAO {
 
     }
 
-    public Character getCharacterByName(String characterName){
-        Character character = null;
 
-        return character;
-    }
-    public void deleteCharacterByName(String characterName){
-        //Aqui va el codigo de eliminar respecto nombre
-    }
     public int getSpiritByName(String characterName){
 
         int spirit = 0;

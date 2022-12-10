@@ -62,4 +62,26 @@ public class AdventureDAO {
 
         return saved;
     }
+
+    public ArrayList<Adventure> getAllAdventures(){
+        Adventure[] currentAdventure;
+        ArrayList<Adventure> adventures = new ArrayList<>();
+
+        try
+        {
+            currentAdventure = gson.fromJson(gson.newJsonReader(new FileReader(String.valueOf(adventurePath))), Adventure[].class);
+
+            if (currentAdventure != null) {
+                adventures.addAll(Arrays.asList(currentAdventure));
+            }else{
+                adventures = null;
+            }
+        }
+        catch (FileNotFoundException ignored)
+        {
+
+        }
+
+        return adventures;
+    }
 }
