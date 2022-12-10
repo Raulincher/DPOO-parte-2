@@ -20,4 +20,7 @@ public class Character {
     public int getCharacterLevel() {return xp;}
     public int getMind() {return mind;}
     public int getSpirit() {return spirit;}
+    public void setBody(int body) {this.body = body;}
+    public void setMind(int mind) {this.mind = mind;}
+    public void setSpirit(int spirit) {this.spirit = spirit;}
 }

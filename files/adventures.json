@@ -1,10 +1,15 @@
 [
   {
+<<<<<<< HEAD
     "name": "hola pepe",
+=======
+    "name": "Sensacionalismo",
+>>>>>>> origin/master
     "encounters": 3,
     "encounterMonsters": [
       [
         {
+<<<<<<< HEAD
           "name": "Snaga",
           "challenge": "Minion",
           "experience": 2,
@@ -207,6 +212,26 @@
       ],
       [
         {
+=======
+          "name": "Balrog",
+          "challenge": "Boss",
+          "experience": 120,
+          "hitPoints": 74,
+          "initiative": 2,
+          "damageDice": "d20",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Balrog",
+          "challenge": "Boss",
+          "experience": 120,
+          "hitPoints": 74,
+          "initiative": 2,
+          "damageDice": "d20",
+          "damageType": "Magical"
+        },
+        {
+>>>>>>> origin/master
           "name": "Goblin",
           "challenge": "Minion",
           "experience": 2,
@@ -223,6 +248,7 @@
           "initiative": 0,
           "damageDice": "d4",
           "damageType": "Physical"
+<<<<<<< HEAD
         },
         {
           "name": "Goblin",
@@ -277,16 +303,23 @@
           "initiative": 2,
           "damageDice": "d6",
           "damageType": "Physical"
+=======
+>>>>>>> origin/master
         }
       ]
     ]
   },
   {
+<<<<<<< HEAD
     "name": "prueba erase",
+=======
+    "name": "Juane",
+>>>>>>> origin/master
     "encounters": 3,
     "encounterMonsters": [
       [
         {
+<<<<<<< HEAD
           "name": "Goblin",
           "challenge": "Minion",
           "experience": 2,
@@ -574,11 +607,38 @@
           "hitPoints": 6,
           "initiative": 2,
           "damageDice": "d6",
+=======
+          "name": "Troll",
+          "challenge": "Lieutenant",
+          "experience": 20,
+          "hitPoints": 27,
+          "initiative": -2,
+          "damageDice": "d12",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Troll",
+          "challenge": "Lieutenant",
+          "experience": 20,
+          "hitPoints": 27,
+          "initiative": -2,
+          "damageDice": "d12",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+>>>>>>> origin/master
           "damageType": "Physical"
         }
       ],
       [
         {
+<<<<<<< HEAD
           "name": "Orc Shaman",
           "challenge": "Minion",
           "experience": 5,
@@ -711,10 +771,29 @@
           "initiative": 1,
           "damageDice": "d8",
           "damageType": "Magical"
+=======
+          "name": "Giant",
+          "challenge": "Lieutenant",
+          "experience": 26,
+          "hitPoints": 35,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Giant",
+          "challenge": "Lieutenant",
+          "experience": 26,
+          "hitPoints": 35,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical"
+>>>>>>> origin/master
         }
       ],
       [
         {
+<<<<<<< HEAD
           "name": "Goblin",
           "challenge": "Minion",
           "experience": 2,
@@ -739,12 +818,30 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
+=======
+          "name": "Warg",
+          "challenge": "Minion",
+          "experience": 8,
+          "hitPoints": 12,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg",
+          "challenge": "Minion",
+          "experience": 8,
+          "hitPoints": 12,
+          "initiative": 2,
+          "damageDice": "d6",
+>>>>>>> origin/master
           "damageType": "Physical"
         }
       ]
     ]
   },
   {
+<<<<<<< HEAD
     "name": "folosr",
     "encounters": 2,
     "encounterMonsters": [
@@ -873,11 +970,272 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
+=======
+    "name": "Paldea",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Glaurung the Great Worm",
+          "challenge": "Boss",
+          "experience": 140,
+          "hitPoints": 81,
+          "initiative": 3,
+          "damageDice": "d20",
+          "damageType": "Psychical"
+        }
+      ],
+      [
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+>>>>>>> origin/master
           "damageType": "Physical"
         }
       ],
       [
+<<<<<<< HEAD
         null
+=======
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        }
+>>>>>>> origin/master
       ]
     ]
   }
