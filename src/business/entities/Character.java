@@ -2,17 +2,16 @@ package business.entities;
 
 public class Character {
 
-    String name, player, characterClass;
+    String name, player;
     int xp, body, mind, spirit;
 
-    public Character(String characterName, String playerName, int characterLevel, int body, int mind, int spirit, String characterClass){
+    public Character(String characterName, String playerName, int characterLevel, int body, int mind, int spirit){
         this.name = characterName;
         this.player = playerName;
         this.xp = characterLevel;
         this.body = body;
         this.mind = mind;
         this.spirit = spirit;
-        this.characterClass = characterClass;
     }
 
     public String getCharacterName(){return name;}
@@ -21,5 +20,4 @@ public class Character {
     public int getCharacterLevel() {return xp;}
     public int getMind() {return mind;}
     public int getSpirit() {return spirit;}
-    public String getCharacterClass() {return characterClass;}
 }

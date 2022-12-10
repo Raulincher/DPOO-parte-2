@@ -3,75 +3,98 @@ package persistance;
 import business.entities.Character;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import org.json.simple.JSONObject;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 public class CharacterDAO {
 
-    private Gson gson;
+    private final Gson gson;
+    public String characterPath = "files/characters.json";
 
     public CharacterDAO() {
-        this.gson = new Gson();
+        gson = new GsonBuilder().setPrettyPrinting().create();
+
+        File jsonCharacterFile = new File(String.valueOf(characterPath));
+
+        if (!jsonCharacterFile.exists())
+        {
+            try {
+                jsonCharacterFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public Character[] readCharacterJSON(){
+    public ArrayList<Character> readCharacterJSON()
+    {
+        Character[] currentCharacters;
+        ArrayList<Character> characters = new ArrayList<>();
 
-        Character[] character = null;
+        try
+        {
+            currentCharacters = gson.fromJson(gson.newJsonReader(new FileReader(String.valueOf(characterPath))), Character[].class);
 
-        try {
-            character = gson.fromJson(new FileReader("src/characters.json"), Character[].class);
-        } catch(Exception e) {
-            e.printStackTrace();
+            if (currentCharacters != null) {
+                characters.addAll(Arrays.asList(currentCharacters));
+            }
+        }
+        catch (FileNotFoundException ignored)
+        {
+
         }
 
-        return character;
-
+        return characters;
     }
 
-    public void saveCharacter(Character character) {
-        /*JSONObject jsonObject = new JSONObject();
 
-        String characterName = character.getCharacterName();
-        String playerName = character.getPlayerName();
-        int xp = character.getCharacterLevel();
-        int body = character.getBody();
-        int mind = character.getMind();
-        int spirit = character.getSpirit();
-        String characterClass = character.getCharacterClass();
 
-        jsonObject.put("class", characterClass);
-        jsonObject.put("name", characterName);
-        jsonObject.put("player", playerName);
-        jsonObject.put("xp", xp);
-        jsonObject.put("body", body);
-        jsonObject.put("mind", mind);
-        jsonObject.put("spirit", spirit);*/
+    public boolean saveCharacter(Character character) {
 
-        try {
-            FileWriter fw = new FileWriter("src/characters.json", true);
-            gson.toJson(character, fw);
-            fw.flush();
-            fw.close();
+        FileWriter writer;
+        ArrayList<Character> characters = new ArrayList<>();
+        Character[] currentCharacter;
+        boolean saved = false;
 
-            /*FileWriter file = new FileWriter("src/characters.json", true);
-            file.write(jsonObject.toJSONString());
-            file.close();*/
-        }catch (IOException e){
-            e.printStackTrace();
+        try
+        {
+            currentCharacter = gson.fromJson(gson.newJsonReader(new FileReader(String.valueOf(characterPath))), Character[].class);
+
+            writer = new FileWriter(String.valueOf(characterPath));
+            if (currentCharacter != null) {
+                characters.addAll(Arrays.asList(currentCharacter));
+            }
+            characters.add(character);
+
+            gson.toJson(characters, writer);
+
+            writer.close();
+
+            saved = true;
+
         }
-        System.out.println("Character generated correctly!");
+        catch(FileNotFoundException ignored)
+        {
+
+        }
+        catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+
+        return saved;
+
     }
 
     public Character getCharacterByName(String characterName){

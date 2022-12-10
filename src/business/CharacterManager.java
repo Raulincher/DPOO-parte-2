@@ -3,7 +3,9 @@ package business;
 import business.entities.Character;
 import persistance.CharacterDAO;
 
+import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Random;
 
 public class CharacterManager {
@@ -14,9 +16,10 @@ public class CharacterManager {
         this.characterDAO = characterDAO;
     }
 
-    public void createCharacter(String characterName, String playerName, int characterLevel, int body, int mind, int spirit, String characterClass){
-        characterDAO.saveCharacter(new Character(characterName, playerName, characterLevel, body, mind, spirit, characterClass));
+    public boolean createCharacter(String characterName, String playerName, int characterLevel, int body, int mind, int spirit){
+        return characterDAO.saveCharacter(new Character(characterName, playerName, characterLevel, body, mind, spirit));
     }
+
 
     public int[] diceRoll2D6(){
 
@@ -183,30 +186,53 @@ public class CharacterManager {
 
         return level;
     }
-    public Character[] getAllCharacters(){
+    public ArrayList<Character> getAllCharacters(){
         return characterDAO.readCharacterJSON();
     }
 
-    public Character[] filteredPlayers(String playerName){
-        Character[] characters = characterDAO.readCharacterJSON();
-        Character[] filteredCharacters = null;
+    public ArrayList<Character> filteredPlayers(String playerName){
+        ArrayList<Character> characters = characterDAO.readCharacterJSON();
+        ArrayList<Character> filteredCharacters = null;
         int i = 0;
         int j = 0;
-        if(playerName != ""){
-            while(i < characters.length){
-                if(characters[i].getPlayerName().toLowerCase(Locale.ROOT).contains(playerName.toLowerCase(Locale.ROOT))){
-                    filteredCharacters[j] = characters[i];
+        boolean noCoincidence = true;
+        if(!Objects.equals(playerName, "")){
+            while(i < characters.size()){
+                if(characters.get(i).getPlayerName().toLowerCase(Locale.ROOT).contains(playerName.toLowerCase(Locale.ROOT))){
                     j++;
-                    System.out.println("elpepep");
+                }
+                i++;
+            }
+
+            filteredCharacters = new ArrayList<>(j);
+            for (i = 0; i < j; i++) {
+                filteredCharacters.add(characters.get(i));
+            }
+
+            i = 0;
+            j = 0;
+            while(i < characters.size()){
+                if(characters.get(i).getPlayerName().toLowerCase(Locale.ROOT).contains(playerName.toLowerCase(Locale.ROOT))){
+                    filteredCharacters.set(j, characters.get(i));
+                    j++;
+                    noCoincidence = false;
+                }else{
+                    if(j == 0){
+                        noCoincidence = true;
+                    }
                 }
                 i++;
             }
         }else{
 
             filteredCharacters = getAllCharacters();
-
+            noCoincidence = false;
         }
 
+        if(noCoincidence){
+            filteredCharacters = new ArrayList<>(1);
+            filteredCharacters.add(null);
+        }
 
         return filteredCharacters;
     }

@@ -1,32 +1,65 @@
 package persistance;
 
+import business.entities.Adventure;
+import business.entities.Character;
 import business.entities.Monster;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class AdventureDAO {
 
-    private Gson gson;
-
+    private final Gson gson;
+    public String adventurePath = "files/adventures.json";
     public AdventureDAO() {
-        this.gson = new Gson();
+        gson = new GsonBuilder().setPrettyPrinting().create();
+
+        File jsonCharacterFile = new File(String.valueOf(adventurePath));
+
+        if (!jsonCharacterFile.exists())
+        {
+            try {
+                jsonCharacterFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public Monster[] getMonstersByAdventure(String adventureName){
+    public boolean saveAdventure(Adventure adventure){
+        FileWriter writer;
+        ArrayList<Adventure> adventures = new ArrayList<>();
+        Adventure[] currentAdventure;
+        boolean saved = false;
 
-        Monster[] monsters = null;
+        try
+        {
+            currentAdventure = gson.fromJson(gson.newJsonReader(new FileReader(String.valueOf(adventurePath))), Adventure[].class);
 
-        //codigo de busqueda de monstruos en json
+            writer = new FileWriter(String.valueOf(adventurePath));
+            if (currentAdventure != null) {
+                adventures.addAll(Arrays.asList(currentAdventure));
+            }
+            adventures.add(adventure);
 
-        return monsters;
-    }
+            gson.toJson(adventures, writer);
 
+            writer.close();
 
-    public int getMonsterQuantityByName(String monsterName){
+            saved = true;
 
-        int quantity = 0;
+        }
+        catch(FileNotFoundException ignored)
+        {
 
-        //codigo para contar cuantos monstruos con x nombre hay
+        }
+        catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
 
-        return quantity;
+        return saved;
     }
 }
