@@ -1,0 +1,121 @@
+[
+  {
+    "name": "Sensacionalismo",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Balrog",
+          "challenge": "Boss",
+          "experience": 120,
+          "hitPoints": 74,
+          "initiative": 2,
+          "damageDice": "d20",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Balrog",
+          "challenge": "Boss",
+          "experience": 120,
+          "hitPoints": 74,
+          "initiative": 2,
+          "damageDice": "d20",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "Juane",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Troll",
+          "challenge": "Lieutenant",
+          "experience": 20,
+          "hitPoints": 27,
+          "initiative": -2,
+          "damageDice": "d12",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Troll",
+          "challenge": "Lieutenant",
+          "experience": 20,
+          "hitPoints": 27,
+          "initiative": -2,
+          "damageDice": "d12",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Giant",
+          "challenge": "Lieutenant",
+          "experience": 26,
+          "hitPoints": 35,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Giant",
+          "challenge": "Lieutenant",
+          "experience": 26,
+          "hitPoints": 35,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Warg",
+          "challenge": "Minion",
+          "experience": 8,
+          "hitPoints": 12,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg",
+          "challenge": "Minion",
+          "experience": 8,
+          "hitPoints": 12,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ]
+    ]
+  }
+]

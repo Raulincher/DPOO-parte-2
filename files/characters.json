@@ -134,5 +134,13 @@
     "body": 1,
     "mind": 2,
     "spirit": 2
+  },
+  {
+    "name": "Jose",
+    "player": "Pedrito91",
+    "xp": 100,
+    "body": 0,
+    "mind": 0,
+    "spirit": -1
   }
 ]

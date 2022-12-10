@@ -190,6 +190,14 @@ public class UIController {
             uiManager.showMessage("\t\n0. Back");
 
             int characterPicked = uiManager.askForInteger("Who would you like to meet [0.." + character.size() + "]: ");
+
+            if((characterPicked) > character.size() || (characterPicked) < 1) {
+                while ((characterPicked) > character.size() || (characterPicked) < 1) {
+                    uiManager.showMessage("Tavern keeper: “Please choose an existing character”\n");
+                    characterPicked = uiManager.askForInteger("Who would you like to meet [0.." + character.size() + "]: ");
+                }
+            }
+
             if(characterPicked != 0){
                 Character characterChosen = character.get(characterPicked - 1);
 
@@ -323,6 +331,14 @@ public class UIController {
                         }
 
                         monsterOption = uiManager.askForInteger("-> Choose a monster to add [1.." + totalMonsters + "]: ");
+
+                        if(monsterOption > monsters.size() || monsterOption < 1) {
+                            while(monsterOption > monsters.size() || monsterOption < 1) {
+                                uiManager.showMessage("Tavern keeper: “Please choose an existing monster”\n");
+                                monsterOption = uiManager.askForInteger("-> Choose a monster to add [1.." + monsters.size() + "]: ");
+                            }
+                        }
+
                         lastQuantity = monsterQuantity + lastQuantity;
                         monsterQuantity = uiManager.askForInteger("-> How many " + monsters.get(monsterOption - 1).getMonsterName() + " do you want to add: ");
 
@@ -333,6 +349,14 @@ public class UIController {
 
                     case 2 -> {
                         monsterDeleteOption = uiManager.askForInteger("Which monster do you want to delete: ");
+
+                        if(monsterDeleteOption > monstersQuantityAndNames.size() || monsterDeleteOption < 1) {
+                            while(monsterDeleteOption > monstersQuantityAndNames.size() || monsterDeleteOption < 1) {
+                                uiManager.showMessage("Tavern keeper: “Please choose an existing monster”\n");
+                                monsterDeleteOption = uiManager.askForInteger("Which monster do you want to delete: ");
+                            }
+                        }
+
                         int removedCounter = 0;
                         String monsterToBeErased = monstersQuantityAndNames.get(monsterDeleteOption - 1);
 
@@ -391,6 +415,13 @@ public class UIController {
         }
 
         adventureSelection = uiManager.askForInteger("-> Choose an adventure: ");
+
+        if((adventureSelection) > adventures.size() || (adventureSelection) < 1) {
+            while ((adventureSelection) > adventures.size()) {
+                uiManager.showMessage("Tavern keeper: “Please choose an existing adventure”\n");
+                adventureSelection = uiManager.askForInteger("-> Choose an adventure: ");
+            }
+        }
         uiManager.showMessage("Tavern keeper: “" + adventures.get(adventureSelection - 1).getAdventureName() + " it is!" + "” \n “And how many people shall join you?”");
 
         characterQuantity = uiManager.askForInteger("-> Choose a number of characters [3..5]: ");
