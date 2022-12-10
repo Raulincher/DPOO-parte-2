@@ -1,0 +1,884 @@
+[
+  {
+    "name": "hola pepe",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Snaga",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 4,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Half-orc",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Half-orc",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Half-orc",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Half-orc",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Half-orc",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Half-orc",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Half-orc",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "prueba erase",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ],
+      null,
+      null
+    ]
+  },
+  {
+    "name": "prueba erase 2",
+    "encounters": 2,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ],
+      null
+    ]
+  },
+  {
+    "name": "prueba erase 3",
+    "encounters": 2,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ],
+      null
+    ]
+  },
+  {
+    "name": "prueba erase 4",
+    "encounters": 2,
+    "encounterMonsters": [
+      [
+        null
+      ],
+      null
+    ]
+  },
+  {
+    "name": "ered",
+    "encounters": 2,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "peos",
+    "encounters": 2,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Orc Shaman",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d8",
+          "damageType": "Magical"
+        }
+      ],
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ]
+    ]
+  },
+  {
+    "name": "folosr",
+    "encounters": 2,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        null
+      ]
+    ]
+  }
+]
