@@ -96,6 +96,35 @@ public class AdventureManager {
         return adventureDAO.getAllAdventures();
     }
 
+    public void countSameMonstersInEncounter(ArrayList<String> storedName, ArrayList<Monster> monstersInEncounter){
+
+        int i = 0;
+        int j = 0;
+        int z = 0;
+        boolean repeated = true;
+        while(i < monstersInEncounter.size() - 1){
+            z = 0;
+            if(i == 0){
+                storedName.add(j, monstersInEncounter.get(i).getMonsterName());
+                j++;
+            }else{
+                while(z < storedName.size()){
+                    repeated = storedName.get(z).equals(monstersInEncounter.get(i).getMonsterName());
+                    if(repeated){
+                        z = storedName.size();
+                    }else{
+                        z++;
+                    }
+                }
+                if(!repeated){
+                    storedName.add(j, monstersInEncounter.get(i).getMonsterName());
+                    j++;
+                }
+            }
+
+            i++;
+        }
+    }
 
     public boolean createAdventure(String adventureName, int encounters, ArrayList<ArrayList<Monster>> monsters){
 

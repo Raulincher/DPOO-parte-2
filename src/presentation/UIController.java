@@ -9,6 +9,7 @@ import business.entities.Monster;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 
 public class UIController {
@@ -390,7 +391,7 @@ public class UIController {
         }
 
         adventureSelection = uiManager.askForInteger("-> Choose an adventure: ");
-        uiManager.showMessage("Tavern keeper: “" + adventures.get(adventureSelection).getAdventureName() + " it is!" + "” \n “And how many people shall join you?”");
+        uiManager.showMessage("Tavern keeper: “" + adventures.get(adventureSelection - 1).getAdventureName() + " it is!" + "” \n “And how many people shall join you?”");
 
         characterQuantity = uiManager.askForInteger("-> Choose a number of characters [3..5]: ");
         uiManager.showMessage("Tavern keeper: “Great, " + characterQuantity + " it is.”\n" + "“Who among these lads shall join you?”");
@@ -445,16 +446,34 @@ public class UIController {
         }
 
         uiManager.showMessage("\nTavern keeper: “Great, good luck on your adventure lads!”\n");
-        uiManager.showMessage("The “" + adventures.get(adventureSelection).getAdventureName()  +"” will start soon...\n");
+        uiManager.showMessage("The “" + adventures.get(adventureSelection - 1).getAdventureName()  +"” will start soon...\n");
         j = 0;
-        int adventureEncounters = 0;
+        int adventureEncounters = adventures.get(adventureSelection - 1).getEncounters();
 
         //Combat phases
 
         do{
             uiManager.showMessage("---------------------");
-            uiManager.showMessage("Starting Encounter 1:");
-            //get monsters from this adventure and encounter number
+            uiManager.showMessage("Starting Encounter "+ (j+1) +":");
+
+            ArrayList<Monster> monstersInEncounter = adventures.get(adventureSelection - 1).getAdventureEncounterMonsters().get(j);
+            ArrayList<String> storedName = new ArrayList<>(0);
+
+            adventureManager.countSameMonstersInEncounter(storedName, monstersInEncounter);
+
+
+            i = 0;
+            long count = 0;
+            while(i < storedName.size()){
+                int finalI1 = i;
+                count = monstersInEncounter.stream().filter(m -> m.getMonsterName().equals(storedName.get(finalI1))).count();
+                uiManager.showMessage("\t- "+ count + "x " + storedName.get(i));
+
+                i++;
+            }
+
+
+
             uiManager.showMessage("---------------------");
 
             //preparation phase
