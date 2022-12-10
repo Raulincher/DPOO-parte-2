@@ -117,5 +117,269 @@
         }
       ]
     ]
+  },
+  {
+    "name": "Paldea",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Glaurung the Great Worm",
+          "challenge": "Boss",
+          "experience": 140,
+          "hitPoints": 81,
+          "initiative": 3,
+          "damageDice": "d20",
+          "damageType": "Psychical"
+        }
+      ],
+      [
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Caracharoth",
+          "challenge": "Lieutenant",
+          "experience": 38,
+          "hitPoints": 39,
+          "initiative": 3,
+          "damageDice": "d10",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        },
+        {
+          "name": "Vampire",
+          "challenge": "Lieutenant",
+          "experience": 24,
+          "hitPoints": 24,
+          "initiative": 2,
+          "damageDice": "d10",
+          "damageType": "Magical"
+        }
+      ]
+    ]
   }
 ]

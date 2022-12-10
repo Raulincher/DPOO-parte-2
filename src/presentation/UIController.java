@@ -417,7 +417,7 @@ public class UIController {
         adventureSelection = uiManager.askForInteger("-> Choose an adventure: ");
 
         if((adventureSelection) > adventures.size() || (adventureSelection) < 1) {
-            while ((adventureSelection) > adventures.size()) {
+            while ((adventureSelection) > adventures.size() || (adventureSelection) < 1) {
                 uiManager.showMessage("Tavern keeper: “Please choose an existing adventure”\n");
                 adventureSelection = uiManager.askForInteger("-> Choose an adventure: ");
             }
@@ -425,6 +425,12 @@ public class UIController {
         uiManager.showMessage("Tavern keeper: “" + adventures.get(adventureSelection - 1).getAdventureName() + " it is!" + "” \n “And how many people shall join you?”");
 
         characterQuantity = uiManager.askForInteger("-> Choose a number of characters [3..5]: ");
+        if((characterQuantity) > 5 || (characterQuantity) < 3) {
+            while ((characterQuantity) > 5 || (characterQuantity) < 3)  {
+                uiManager.showMessage("Tavern keeper: “Please choose a correct number of characters”\n");
+                characterQuantity = uiManager.askForInteger("-> Choose a number of characters [3..5]: ");
+            }
+        }
         uiManager.showMessage("Tavern keeper: “Great, " + characterQuantity + " it is.”\n" + "“Who among these lads shall join you?”");
 
         int i = 0, j = 0;
@@ -459,6 +465,14 @@ public class UIController {
                 i++;
             }
             int CharacterPartySelected = uiManager.askForInteger("-> Choose character "+ (j+1) + " in your party: \n");
+
+
+            if (CharacterPartySelected < 1 || CharacterPartySelected > characters.size()) {
+                while (CharacterPartySelected < 1 || CharacterPartySelected > characters.size()) {
+                    uiManager.showMessage("Tavern keeper: “Please choose an existing character”\n");
+                    CharacterPartySelected = uiManager.askForInteger("-> Choose character "+ (j+1) + " in your party: \n");
+                }
+            }
 
             characterInParty.set(j, characters.get(CharacterPartySelected - 1));
 
@@ -515,8 +529,11 @@ public class UIController {
             i = 0;
             while(i < characterQuantity){
                 //get characterName from party
-                uiManager.showMessage("characterName uses Self-Motivated. Their Spirit increases in +1");
+                uiManager.showMessage(characterInParty.get(i).getCharacterName() + " uses Self-Motivated. Their Spirit increases in +1");
                 //update character spirit +1
+                int temporalSpirit = characterInParty.get(i).getSpirit();
+                temporalSpirit = temporalSpirit + 1;
+                characterInParty.get(i).setSpirit(temporalSpirit);
                 i++;
             }
 
@@ -526,7 +543,7 @@ public class UIController {
             int monsterQuantity = 0;
             int[] initiative = null;
             while(i < characterQuantity){
-                //initiative[i] = characterManager.initiativeCalculator(/*characterNamesList[i]*/ "pepe");
+               // initiative[i] = characterManager.initiativeCalculator(/*characterNamesList[i]*/ "pepe");
                 i++;
             }
 
