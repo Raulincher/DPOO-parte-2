@@ -275,8 +275,10 @@ public class UIController {
 
         encounterMonsters = new ArrayList<ArrayList<Monster>>(adventureEncounters);
         for (i = 0; i < adventureEncounters; i++) {
-            encounterMonsters.add(null);
+            encounterMonsters.add(i, new ArrayList<Monster>(1));
+            encounterMonsters.get(i).add(0,null);
         }
+        System.out.println(encounterMonsters.size());
 
 
         while(auxEncounter < adventureEncounters){
@@ -285,7 +287,7 @@ public class UIController {
                 uiManager.showMessage("* Monsters in encounter");
                 i = 0;
 
-                if(encounterMonsters.get(auxEncounter) != null){
+                if(encounterMonsters.get(auxEncounter).get(0) != null){
                     for (i = 0; i < monstersQuantityAndNames.size();i++) {
                         String auxName = monstersQuantityAndNames.get(i);
                         String[] auxNameSplit = auxName.split("\\d+");
@@ -297,7 +299,7 @@ public class UIController {
                 uiManager.showAdventureMenu();
                 option = uiManager.askForInteger("\n-> Enter an option [1..3]: ");
 
-                if(option == 2 && encounterMonsters.get(auxEncounter) == null){
+                if(option == 2 && encounterMonsters.get(auxEncounter).get(0) == null){
                     uiManager.showMessage("\nTavern keeper: “Sorry pal you can't erase monsters if your adventure don't have any, i'll let you add some first”");
                     uiManager.showMessage("The tavern keeper shows you the add monster menu\n");
                     option = 1;
@@ -320,11 +322,15 @@ public class UIController {
                         monsterQuantity = uiManager.askForInteger("-> How many " + monsters.get(monsterOption - 1).getMonsterName() + " do you want to add: ");
 
 
-                        if(encounterMonsters.get(auxEncounter) == null){
+                        if(encounterMonsters.get(auxEncounter).get(0) == null){
                             encounterMonsters.set(auxEncounter, new ArrayList<Monster>(monsterQuantity));
+                            lastQuantity = 0;
                         }else{
                             encounterMonsters.get(auxEncounter).ensureCapacity(lastQuantity);
                         }
+                        System.out.println(encounterMonsters.get(auxEncounter).size());
+                        System.out.println(monsterQuantity);
+                        System.out.println(lastQuantity);
 
                         adventureManager.setMonstersEncounter(monsters, encounterMonsters, monsterOption, lastQuantity, monsterQuantity ,auxEncounter);
                         int auxSize = monstersQuantityAndNames.size();
@@ -355,7 +361,6 @@ public class UIController {
                         }
                     }
 
-                    //adventureManager.addMonster(Monster monster, int monsterQuantity);
                     case 2 -> {
                         monsterDeleteOption = uiManager.askForInteger("Which monster do you want to delete: ");
                         int removedCounter = 0;
@@ -365,16 +370,23 @@ public class UIController {
                         lastQuantity = lastQuantity + monsterQuantity;
 
                         for(i = 0; i < lastQuantity; i++){
-                           String comparedName = encounterMonsters.get(auxEncounter).get(i - removedCounter).getMonsterName();
+                            System.out.println(i);
+                            System.out.println(removedCounter);
+                            String comparedName = encounterMonsters.get(auxEncounter).get(i - removedCounter).getMonsterName();
 
                            if(comparedName.equals(auxNameSplit[0])){
                                encounterMonsters.get(auxEncounter).remove(i - removedCounter);
                                removedCounter++;
+                               if(encounterMonsters.get(auxEncounter).size() == 0){
+                                   encounterMonsters.get(auxEncounter).add(0,null);
+
+                               }
                            }
                         }
                         monstersQuantityAndNames.remove(monsterDeleteOption - 1);
 
                         lastQuantity = lastQuantity - removedCounter;
+                        System.out.println(lastQuantity);
 
                         uiManager.showMessage(removedCounter + " " + auxNameSplit[0]  + " were removed from the encounter.");
                     }
