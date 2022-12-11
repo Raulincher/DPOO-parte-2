@@ -102,7 +102,7 @@ public class AdventureManager {
         int j = 0;
         int z = 0;
         boolean repeated = true;
-        while(i < monstersInEncounter.size() - 1){
+        while(i < monstersInEncounter.size()){
             z = 0;
             if(i == 0){
                 storedName.add(j, monstersInEncounter.get(i).getMonsterName());

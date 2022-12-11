@@ -55,7 +55,7 @@ public class CharacterManager {
 
     public int experienceCalculator(int level){
 
-        int xp = 0;
+        int xp;
         if(level == 1){
             xp = 0;
         }else if(level == 2){
@@ -119,7 +119,7 @@ public class CharacterManager {
 
         while(i < characters.size()){
             if(characterName.equals(characters.get(i).getCharacterName())){
-                mind = characters.get(i).getBody();
+                mind = characters.get(i).getMind();
             }
             i++;
         }
@@ -133,7 +133,7 @@ public class CharacterManager {
 
         while(i < characters.size()){
             if(characterName.equals(characters.get(i).getCharacterName())){
-                xp = characters.get(i).getBody();
+                xp = characters.get(i).getCharacterLevel();
             }
             i++;
         }
@@ -224,7 +224,7 @@ public class CharacterManager {
 
 
     public int revertXpToLevel(int xp){
-        int level = 0;
+        int level;
         if(xp >= 0 && xp <= 99){
             level = 1;
         }else if(xp >= 100 && xp <= 199){
@@ -252,11 +252,19 @@ public class CharacterManager {
 
     public int initialLifeCalculator(String characterName){
 
-        int life = 0;
+        int life;
         int body = getCharacterBody(characterName);
         int xp = getCharacterXp(characterName);
+        System.out.println(xp);
 
-        life = (10 + body) * revertXpToLevel(xp);
+        int level = revertXpToLevel(xp);
+
+        System.out.println(level);
+        System.out.println(body);
+        System.out.println(characterName);
+
+        life = (10 + body) * level;
+        System.out.println(life);
 
         return life;
     }
