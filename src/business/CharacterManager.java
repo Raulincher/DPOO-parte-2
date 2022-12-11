@@ -26,9 +26,9 @@ public class CharacterManager {
         int[] roll = {0, 0};
 
         Random rand = new Random();
-        int upperbound = 7;
-        roll[0] = rand.nextInt(upperbound);
-        roll[1] = rand.nextInt(upperbound);
+        int upperbound = 6;
+        roll[0] = rand.nextInt(upperbound) + 1;
+        roll[1] = rand.nextInt(upperbound) + 1;
 
         return roll;
     }
@@ -51,6 +51,7 @@ public class CharacterManager {
         }
         return statBonus;
     }
+
 
     public int experienceCalculator(int level){
 
@@ -79,35 +80,104 @@ public class CharacterManager {
         return xp;
     }
 
-    public int initiativeCalculator(String characterName){
+    public void updateCharacterSpirit(){
+        ArrayList<Character> characters = characterDAO.readCharacterJSON();
+    }
+
+    public int getCharacterSpirit(String characterName){
+        int spirit = 0;
+        int i = 0;
+        ArrayList<Character> characters = characterDAO.readCharacterJSON();
+
+        while(i < characters.size()){
+            if(characterName.equals(characters.get(i).getCharacterName())){
+                spirit = characters.get(i).getSpirit();
+            }
+            i++;
+        }
+        return spirit;
+    }
+
+    public int getCharacterBody(String characterName){
+        int body = 0;
+        int i = 0;
+        ArrayList<Character> characters = characterDAO.readCharacterJSON();
+
+        while(i < characters.size()){
+            if(characterName.equals(characters.get(i).getCharacterName())){
+                body = characters.get(i).getBody();
+            }
+            i++;
+        }
+        return body;
+    }
+
+    public int getCharacterMind(String characterName){
+        int mind = 0;
+        int i = 0;
+        ArrayList<Character> characters = characterDAO.readCharacterJSON();
+
+        while(i < characters.size()){
+            if(characterName.equals(characters.get(i).getCharacterName())){
+                mind = characters.get(i).getBody();
+            }
+            i++;
+        }
+        return mind;
+    }
+
+    public int getCharacterXp(String characterName){
+        int xp = 0;
+        int i = 0;
+        ArrayList<Character> characters = characterDAO.readCharacterJSON();
+
+        while(i < characters.size()){
+            if(characterName.equals(characters.get(i).getCharacterName())){
+                xp = characters.get(i).getBody();
+            }
+            i++;
+        }
+        return xp;
+    }
+
+    /*public int initiativeCalculator(String characterName){
 
         int roll = diceRollD12();
         int initiative = 0;
-        int spirit = characterDAO.getSpiritByName(characterName);
+        int spirit = getCharacterSpirit(characterName);
 
         initiative = roll + spirit;
 
         return initiative;
-    }
+    }*/
 
     public int diceRollD12(){
         int roll = 0;
 
         Random rand = new Random();
-        int upperbound = 13;
-        roll = rand.nextInt(upperbound);
+        int upperbound = 12;
+        roll = rand.nextInt(upperbound) + 1;
 
         return roll;
     }
 
     public int diceRollD10(){
         int roll = 0;
+        int damage;
 
         Random rand = new Random();
-        int upperbound = 11;
-        roll = rand.nextInt(upperbound);
+        int upperbound = 10;
+        roll = rand.nextInt(upperbound) + 1;
 
-        return roll;
+        if(roll == 1){
+            damage = 0;
+        }else if(roll < 10){
+            damage = 1;
+        }else{
+            damage = 2;
+        }
+
+        return damage;
     }
 
     public int diceRollD6(){
@@ -130,20 +200,11 @@ public class CharacterManager {
         return roll;
     }
 
-    public int initialLifeCalculator(String characterName){
 
-        int life = 0;
-        int body = characterDAO.getBodyByName(characterName);
-        int xp = characterDAO.getXpByName(characterName);
 
-        life = (10 + body) * revertXpToLevel(xp);
-
-        return life;
-    }
-
-    public int damageCalculator(String characterName){
+    public int characterDamageCalculator(String characterName){
         int damage = 0;
-        int body = characterDAO.getBodyByName(characterName);
+        int body = getCharacterBody(characterName);
 
         damage = diceRollD6() + body;
 
@@ -152,7 +213,7 @@ public class CharacterManager {
 
     public int BandageTime(String characterName){
         int healing = 0;
-        int mind = characterDAO.getMindByName(characterName);
+        int mind = getCharacterMind(characterName);
 
         healing = diceRollD8() + mind;
 
@@ -160,31 +221,44 @@ public class CharacterManager {
     }
 
 
+
+
     public int revertXpToLevel(int xp){
         int level = 0;
         if(xp >= 0 && xp <= 99){
             level = 1;
-        }else if(xp >= 200 && xp <= 199){
+        }else if(xp >= 100 && xp <= 199){
             level = 2;
-        }else if(xp >= 300 && xp <= 299){
+        }else if(xp >= 200 && xp <= 299){
             level = 3;
-        }else if(xp >= 400 && xp <= 399){
+        }else if(xp >= 300 && xp <= 399){
             level = 4;
-        }else if(xp >= 500 && xp <= 499){
+        }else if(xp >= 400 && xp <= 499){
             level = 5;
-        }else if(xp >= 600 && xp <= 599){
+        }else if(xp >= 500 && xp <= 599){
             level = 6;
-        }else if(xp >= 700 && xp <= 699){
+        }else if(xp >= 600 && xp <= 699){
             level = 7;
-        }else if(xp >= 800 && xp <= 799){
+        }else if(xp >= 700 && xp <= 799){
             level = 8;
-        }else if(xp >= 900 && xp <= 899){
+        }else if(xp >= 800 && xp <= 899){
             level = 9;
         }else{
             level = 10;
         }
 
         return level;
+    }
+
+    public int initialLifeCalculator(String characterName){
+
+        int life = 0;
+        int body = getCharacterBody(characterName);
+        int xp = getCharacterXp(characterName);
+
+        life = (10 + body) * revertXpToLevel(xp);
+
+        return life;
     }
     public ArrayList<Character> getAllCharacters(){
         return characterDAO.readCharacterJSON();
@@ -239,4 +313,6 @@ public class CharacterManager {
     public boolean deleteCharacter(String characterName){
        return characterDAO.deleteCharacterByName(characterName);
     }
+
+
 }

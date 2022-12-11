@@ -29,15 +29,15 @@ public class Monster {
     }
 
     public int getMonsterHitPoints() {
-        return experience;
-    }
-
-    public int getMonsterInitiative() {
         return hitPoints;
     }
 
-    public int getMonsterXpDrop() {
+    public int getMonsterInitiative() {
         return initiative;
+    }
+
+    public int getMonsterXpDrop() {
+        return experience;
     }
 
     public String getDamageType() {
