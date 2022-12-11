@@ -397,9 +397,10 @@ public class UIController {
         int characterQuantity = 0;
         int adventureSelection = 0;
         double average = 0;
+        int[] playersLife = {0};
         int[] totalPlayersLife = {0};
-        int[] playersLife = null;
         int defeated = 0;
+        int[] saveNumber = new int[5];
 
         int monstersDefeat = 0; //number of monsters encounter defeat
         int charactersDefeat = 0; //number of characters defeat
@@ -442,6 +443,7 @@ public class UIController {
             characterInParty.add(i, null);
         }
 
+
         //creation of the adventure party
         do{
             i = 0;
@@ -467,13 +469,26 @@ public class UIController {
             int CharacterPartySelected = uiManager.askForInteger("-> Choose character "+ (j+1) + " in your party: \n");
 
 
+
             if (CharacterPartySelected < 1 || CharacterPartySelected > characters.size()) {
                 while (CharacterPartySelected < 1 || CharacterPartySelected > characters.size()) {
                     uiManager.showMessage("Tavern keeper: “Please choose an existing character”\n");
                     CharacterPartySelected = uiManager.askForInteger("-> Choose character "+ (j+1) + " in your party: \n");
                 }
             }
+            int w = 0;
+            for (w=0; w<5; w++) {
+                if (saveNumber[w] == CharacterPartySelected) {
+                    uiManager.showMessage("Tavern keeper: “You've already chosen this character!”\n");
+                    CharacterPartySelected = uiManager.askForInteger("-> Choose character "+ (j+1) + " in your party: \n");
+                    while (CharacterPartySelected < 1 || CharacterPartySelected > characters.size() || saveNumber[w] == CharacterPartySelected) {
+                        uiManager.showMessage("Tavern keeper: “Come on! Just choose an existing new character.”\n");
+                        CharacterPartySelected = uiManager.askForInteger("-> Choose character "+ (j+1) + " in your party: \n");
+                    }
+                }
+            }
 
+            saveNumber[j] = CharacterPartySelected;
             characterInParty.set(j, characters.get(CharacterPartySelected - 1));
 
             //characterInParty[j] = characterManager.filteredCharacter(/*characterNamesList[CharacterPartySelected]*/"pepe");
@@ -729,8 +744,8 @@ public class UIController {
                             while (z < characterInParty.size()) {
 
                                 if (actualName.equals(characterInParty.get(z).getCharacterName())) {
-                                    damage = characterManager.characterDamageCalculator(actualName);
-                                    uiManager.showMessage(actualName + " attacks " + monstersInEncounter.get(lastMonsterIndex).getMonsterName() + " with Sword slash\n");
+                                        damage = characterManager.characterDamageCalculator(actualName);
+                                        uiManager.showMessage(actualName + " attacks " + monstersInEncounter.get(lastMonsterIndex).getMonsterName() + " with Sword slash\n");
                                 }
                                 z++;
                             }
@@ -763,11 +778,13 @@ public class UIController {
                                         if (total < 0) {
                                             total = 0;
                                         }
+
                                         uiManager.showMessage("Critical hit and deals " + (damage * 2) + " physical damage.\n");
                                         if(total == 0){
                                             uiManager.showMessage( characterInParty.get(lastCharacterIndex).getCharacterName() + " dies.");
                                         }
                                         charactersLife.set(lastCharacterIndex, characterInParty.get(lastCharacterIndex).getCharacterName() + total + "/" + totalLife);
+
                                         z = listOfPriorities.size();
                                         j = monstersInEncounter.size();
                                     }
@@ -982,15 +999,25 @@ public class UIController {
                 i = 0;
                 while(i < characterQuantity){
 
-                    if(playersLife[i] != 0) {
+                    String[] parts = charactersLife.get(i).split("/");
+                    int temporalLife = Integer.parseInt(parts[0].replaceAll("[^0-99]", ""));
+                    int restLife =  Integer.parseInt(parts[1]);
+                    if(temporalLife != 0) {
                         //int healing = characterManager.BandageTime(characterNamesList[i]);
                         int diceRollHeal = characterManager.diceRollD8();
                         int characterMind = characterInParty.get(i).getMind();
-                        int characterBandage = diceRollHeal + characterMind;
-                        characterInParty.get(i).setSpirit(characterBandage);
-                        uiManager.showMessage(characterInParty.get(i).getPlayerName() + " uses BandageTime. Heals " + diceRollHeal + " hit points");
+                        int characterCuration = diceRollHeal + characterMind;
+                        int characterBandage =  characterCuration + temporalLife;
+
+                        if(characterBandage > restLife) {
+                            characterBandage = restLife;
+                        }
+
+                        charactersLife.set(i, characterInParty.get(i).getCharacterName() + characterBandage + "/" + restLife);
+
+                        uiManager.showMessage(characterInParty.get(i).getCharacterName() + " uses BandageTime. Heals " + characterCuration + " hit points");
                     }else{
-                        uiManager.showMessage(characterInParty.get(i).getPlayerName() + " is unconscious");
+                        uiManager.showMessage(characterInParty.get(i).getCharacterName() + " is unconscious");
                     }
                     i++;
                 }
