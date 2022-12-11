@@ -977,16 +977,21 @@ public class UIController {
                     i++;
 
                 }
+
+                //Bandage time
                 i = 0;
                 while(i < characterQuantity){
 
                     if(playersLife[i] != 0) {
                         //int healing = characterManager.BandageTime(characterNamesList[i]);
-                        uiManager.showMessage("characterName uses BandageTime. Heals " + /*healing*/ "healing number" + " hit points");
+                        int diceRollHeal = characterManager.diceRollD8();
+                        int characterMind = characterInParty.get(i).getMind();
+                        int characterBandage = diceRollHeal + characterMind;
+                        characterInParty.get(i).setSpirit(characterBandage);
+                        uiManager.showMessage(characterInParty.get(i).getPlayerName() + " uses BandageTime. Heals " + diceRollHeal + " hit points");
                     }else{
-                        uiManager.showMessage("characterName is unconscious");
+                        uiManager.showMessage(characterInParty.get(i).getPlayerName() + " is unconscious");
                     }
-
                     i++;
                 }
             }else{
