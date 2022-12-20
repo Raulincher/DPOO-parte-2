@@ -642,6 +642,7 @@ public class UIController {
                 int totalLife = 0;
                 int actualLife = 0;
                 int flag = 0;
+                String compareName;
 
                 uiManager.showMessage("Round "+  (roundCounter + 1) + ":");
                 uiManager.showMessage("Party :");
@@ -745,10 +746,12 @@ public class UIController {
                         if(monstersDefeat < monstersInEncounter.size()){
                             z = 0;
                             while(z < monstersInEncounter.size()){
-                                if(actualName.equals(monstersInEncounter.get(z).getMonsterName())){
+                                auxName = listOfPriorities.get(z + characterQuantity).split("\\d+");
+                                compareName = auxName[0];
+                                if(actualName.equals(compareName)){
                                     String[] auxLife = monstersLife.get(z).split("/");
                                     actualLife = Integer.parseInt(auxLife[0].replaceAll("[^0-9]", ""));
-                                    if(actualLife != 0 && q == z+characterQuantity) {
+                                    if(actualLife != 0 && q == z + characterQuantity) {
                                         damage = monsterManager.monsterDamageCalculator(monstersInEncounter.get(z).getMonsterDice());
                                         uiManager.showMessage("\n" + actualName + " attacks " + characterInParty.get(lastCharacterIndex).getCharacterName());
                                         z = monstersInEncounter.size();
@@ -764,7 +767,9 @@ public class UIController {
                             i = 0;
                             while (z < listOfPriorities.size()) {
                                 while (j < monstersInEncounter.size()) {
-                                    if (actualName.equals(monstersInEncounter.get(j).getMonsterName()) && q == j + characterQuantity) {
+                                    auxName = listOfPriorities.get(j + characterQuantity).split("\\d+");
+                                    compareName = auxName[0];
+                                    if (actualName.equals(compareName)) {
                                         String[] auxLife = charactersLife.get(lastCharacterIndex).split("/");
 
                                         actualLife = Integer.parseInt(auxLife[0].replaceAll("[^0-9]", ""));
@@ -777,7 +782,7 @@ public class UIController {
                                         auxLife = monstersLife.get(j).split("/");
                                         actualLife = Integer.parseInt(auxLife[0].replaceAll("[^0-9]", ""));
 
-                                        if(actualLife != 0) {
+                                        if(actualLife != 0 && j + characterQuantity == q) {
                                             uiManager.showMessage("Critical hit and deals " + (damage * 2) + " physical damage.");
                                             if (total == 0) {
                                                 uiManager.showMessage(characterInParty.get(lastCharacterIndex).getCharacterName() + " falls unconscious.");
@@ -903,10 +908,12 @@ public class UIController {
                         if(monstersDefeat < monstersInEncounter.size()){
                             z = 0;
                             while(z < monstersInEncounter.size()){
-                                if(actualName.equals(monstersInEncounter.get(z).getMonsterName())){
+                                auxName = listOfPriorities.get(z + characterQuantity).split("\\d+");
+                                compareName = auxName[0];
+                                if(actualName.equals(compareName)){
                                     String[] auxLife = monstersLife.get(z).split("/");
                                     actualLife = Integer.parseInt(auxLife[0].replaceAll("[^0-9]", ""));
-                                    if(actualLife != 0 && q == z + 3) {
+                                    if(actualLife != 0 && q == z) {
                                         damage = monsterManager.monsterDamageCalculator(monstersInEncounter.get(z).getMonsterDice());
                                         uiManager.showMessage("\n" + actualName + " attacks " + characterInParty.get(lastCharacterIndex).getCharacterName());
                                         z = monstersInEncounter.size();
@@ -921,9 +928,10 @@ public class UIController {
                         i = 0;
                         if(monstersDefeat < monstersInEncounter.size() && charactersDefeat < characterInParty.size() ){
                             while(z < listOfPriorities.size()){
-                                while(j < monstersInEncounter.size()) {
-                                    if (actualName.equals(monstersInEncounter.get(j).getMonsterName()) && q == j + characterQuantity) {
-                                        String[] auxLife = charactersLife.get(lastCharacterIndex).split("/");
+                                while (j < monstersInEncounter.size()) {
+                                    auxName = listOfPriorities.get(j + characterQuantity).split("\\d+");
+                                    compareName = auxName[0];
+                                    if (actualName.equals(compareName)) {                                        String[] auxLife = charactersLife.get(lastCharacterIndex).split("/");
 
                                         actualLife = Integer.parseInt(auxLife[0].replaceAll("[^0-9]", ""));
                                         totalLife = Integer.parseInt(auxLife[1]);
@@ -934,8 +942,6 @@ public class UIController {
                                         }
                                         auxLife = monstersLife.get(j).split("/");
                                         actualLife = Integer.parseInt(auxLife[0].replaceAll("[^0-9]", ""));
-
-
 
                                         if(actualLife != 0) {
                                             uiManager.showMessage("Hit and deals " + (damage) + " physical damage.");
@@ -1060,7 +1066,9 @@ public class UIController {
                         if(monstersDefeat < monstersInEncounter.size()){
                             z = 0;
                             while(z < monstersInEncounter.size()){
-                                if(actualName.equals(monstersInEncounter.get(z).getMonsterName())){
+                                auxName = listOfPriorities.get(z + characterQuantity).split("\\d+");
+                                compareName = auxName[0];
+                                if(actualName.equals(compareName)){
                                     String[] auxLife = monstersLife.get(z).split("/");
                                     actualLife = Integer.parseInt(auxLife[0].replaceAll("[^0-9]", ""));
                                     if(actualLife != 0 && q == z + characterQuantity) {
