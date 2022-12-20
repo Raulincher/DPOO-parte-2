@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CharacterManager {
 
@@ -255,21 +257,68 @@ public class CharacterManager {
         int life;
         int body = getCharacterBody(characterName);
         int xp = getCharacterXp(characterName);
-        System.out.println(xp);
-
         int level = revertXpToLevel(xp);
 
-        System.out.println(level);
-        System.out.println(body);
-        System.out.println(characterName);
-
         life = (10 + body) * level;
-        System.out.println(life);
 
         return life;
     }
+
+    public boolean characterNameDisponibility(String name){
+
+        boolean exist = false;
+        ArrayList<Character> characters = characterDAO.readCharacterJSON();
+        int i = 0;
+
+        while(i < characters.size() && !exist){
+            if(name.toLowerCase(Locale.ROOT).matches(characters.get(i).getCharacterName().toLowerCase(Locale.ROOT))){
+                exist = true;
+            }
+            i++;
+        }
+
+        return exist;
+    }
+
+
+    public String fixName(String name){
+        String auxName = name;
+        String[] auxNameSplit = auxName.split(" ");
+        String fixedName = null;
+        int i = 0;
+
+        while(i < auxNameSplit.length){
+            auxNameSplit[i] = auxNameSplit[i].substring(0,1).toUpperCase() + auxNameSplit[i].substring(1);
+            if (i == 0){
+                fixedName = auxNameSplit[i];
+            }else{
+                fixedName = fixedName.concat(auxNameSplit[i]);
+            }
+            fixedName = fixedName.concat(" ");
+            i++;
+        }
+
+        fixedName = fixedName.substring(0, fixedName.length() - 1);
+
+        return fixedName;
+    }
     public ArrayList<Character> getAllCharacters(){
         return characterDAO.readCharacterJSON();
+    }
+
+
+    public boolean nameCheck(String name){
+        boolean correct;
+
+        Pattern digit = Pattern.compile("[0-9]");
+        Pattern special = Pattern.compile ("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
+
+        Matcher hasDigit = digit.matcher(name);
+        Matcher hasSpecial = special.matcher(name);
+
+        correct = !hasDigit.find() && !hasSpecial.find();
+
+        return correct;
     }
 
     public ArrayList<Character> filteredPlayers(String playerName){

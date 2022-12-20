@@ -22,7 +22,7 @@ public class Main {
 
         //Business
         CharacterManager characterManager = new CharacterManager(characterDAO);
-        AdventureManager adventureManager = new AdventureManager(adventureDAO);
+        AdventureManager adventureManager = new AdventureManager(adventureDAO, characterManager);
         MonsterManager monsterManager = new MonsterManager(monsterDAO);
 
         //presentation
