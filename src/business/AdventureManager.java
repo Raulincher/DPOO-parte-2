@@ -121,10 +121,17 @@ public class AdventureManager {
         return exist;
     }
 
-    public void setMonstersLifeList(ArrayList<String> monstersLife, ArrayList<Monster> monstersInEncounter){
+    public void setMonstersLifeList(ArrayList<String> monstersLife, ArrayList<Monster> monstersInEncounter, ArrayList<String> listOfPriorities, int characterQuantity){
         int z = 0;
-        while(z < monstersInEncounter.size()){
-            monstersLife.add(z,monstersInEncounter.get(z).getMonsterName() + monstersInEncounter.get(z).getMonsterHitPoints() + "/" + monstersInEncounter.get(z).getMonsterHitPoints());
+        int i = 0;
+        while(i + characterQuantity < listOfPriorities.size()){
+            String[] auxName = listOfPriorities.get(i + characterQuantity).split("\\d+");
+            String actualName = auxName[0];
+            if(monstersInEncounter.get(z).getMonsterName().equals(actualName)){
+                monstersLife.add(i,monstersInEncounter.get(z).getMonsterName() + monstersInEncounter.get(z).getMonsterHitPoints() + "/" + monstersInEncounter.get(z).getMonsterHitPoints());
+                i++;
+                z = 0;
+            }
             z++;
         }
     }
