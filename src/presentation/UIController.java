@@ -453,6 +453,7 @@ public class UIController {
         int defeated = 0;
         int[] saveNumber = new int[5];
         int counterEncounters = 0;
+        ArrayList<String> charactersLife = new ArrayList<>(0);
 
         int monstersDefeat = 0; //number of monsters encounter defeat
         int charactersDefeat = 0; //number of characters defeat
@@ -560,9 +561,14 @@ public class UIController {
         counterEncounters = 0;
         int adventureEncounters = adventures.get(adventureSelection - 1).getEncounters();
 
+        adventureManager.setAdventurersLifeList(characterInParty, charactersLife);
+
+
         //Combat phases
 
         do{
+            ArrayList<String> monstersLife = new ArrayList<>(0);
+
             uiManager.showMessage("---------------------");
             uiManager.showMessage("Starting Encounter "+ (counterEncounters + 1) +":");
 
@@ -602,27 +608,19 @@ public class UIController {
             int monsterQuantity = monstersInEncounter.size();
             int diceRoll = characterManager.diceRollD12();;
             int roundCounter = 0;
-            ArrayList<String> charactersLife = new ArrayList<>(0);
-            ArrayList<String> monstersLife = new ArrayList<>(0);
+
             ArrayList<String> listOfPriorities = adventureManager.listOfPriorities(characterQuantity, monsterQuantity, diceRoll, characterInParty, monstersInEncounter );
 
             adventureManager.orderListOfPriorities(listOfPriorities);
 
             i = 0;
             while(i < listOfPriorities.size()){
-
                 String[] auxCompareName = listOfPriorities.get(i).split("\\d+");
                 String compareName = auxCompareName[0];
-
-
-
                 int compareInitiative = Integer.parseInt(listOfPriorities.get(i).replaceAll("[^0-9]", ""));
-
                 uiManager.showMessage("\t- " + compareInitiative + "   " + compareName);
-
                 i++;
             }
-            i = 0;
 
             uiManager.showMessage("\n\n--------------------");
             uiManager.showMessage("*** Combat stage ***");
@@ -630,8 +628,6 @@ public class UIController {
 
             //storing lives in format, name actual live/total live
             adventureManager.setMonstersLifeList(monstersLife, monstersInEncounter, listOfPriorities, characterQuantity);
-            i = 0;
-            adventureManager.setAdventurersLifeList(characterInParty, charactersLife);
 
             do{
                 int q = 0;
@@ -656,7 +652,6 @@ public class UIController {
 
                 z = 0;
                 while(z < characterInParty.size()) {
-
                     auxName = charactersLife.get(z).split("\\d+");
                     actualName = auxName[0];
                     String[] auxLife = charactersLife.get(z).split("/");
@@ -1099,6 +1094,7 @@ public class UIController {
                                         auxName = monstersLife.get(lastMonsterIndex).split("\\d+");
                                         attackedMonster = auxName[0];
                                         uiManager.showMessage("\n" + actualName + " attacks " + attackedMonster + " with Sword slash.");
+                                        uiManager.showMessage("Fails and deals 0 physical damage.");
                                     }
                                     z = characterInParty.size();
                                 }
@@ -1128,13 +1124,13 @@ public class UIController {
                                     if(actualLife != 0 && q == z + characterQuantity) {
                                         damage = monsterManager.monsterDamageCalculator(actualDice);
                                         uiManager.showMessage("\n" + actualName + " attacks " + characterInParty.get(lastCharacterIndex).getCharacterName());
+                                        uiManager.showMessage("Fails and deals 0 physical damage.");
                                         z = monstersInEncounter.size();
                                     }
                                 }
                                 z++;
                             }
                         }
-                        uiManager.showMessage("Fails and deals 0 physical damage fail");
                     }
 
 
