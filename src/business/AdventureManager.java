@@ -246,9 +246,27 @@ public class AdventureManager {
     }
 
     public boolean createAdventure(String adventureName, int encounters, ArrayList<ArrayList<Monster>> monsters){
-
         return adventureDAO.saveAdventure(new Adventure(adventureName, encounters, monsters));
+    }
 
+    public void enemyDice(ArrayList<String> monstersDamage, ArrayList<Monster> monstersInEncounter){
+        int z = 0;
+        int i = 0;
+
+        while(z < monstersInEncounter.size()){
+            if(z == 0){
+                monstersDamage.add(i,monstersInEncounter.get(z).getMonsterName() + " " + monstersInEncounter.get(z).getMonsterDice());
+                i++;
+            }else{
+                String [] auxName = monstersDamage.get(i - 1).split(" ");
+                String actualName = auxName[0];
+                if(!actualName.equals(monstersInEncounter.get(z).getMonsterName())){
+                    monstersDamage.add(i,monstersInEncounter.get(z).getMonsterName() + " " + monstersInEncounter.get(z).getMonsterDice());
+                    i++;
+                }
+            }
+            z++;
+        }
     }
 
 }
