@@ -330,7 +330,7 @@ public class UIController {
                     for (i = 0; i < monstersQuantityAndNames.size();i++) {
                         String auxName = monstersQuantityAndNames.get(i);
                         String[] auxNameSplit = auxName.split("\\d+");
-                        uiManager.showMessage("\t" + (i+1) + " " + auxNameSplit[0] + " (" + auxName.replaceAll("[^0-9]", "") + ")");
+                        uiManager.showMessage("\t" + (i+1) + " " + auxNameSplit[0] + " (x" + auxName.replaceAll("[^0-9]", "") + ")");
                     }
                 }else{
                     uiManager.showMessage("  # Empty");
@@ -411,6 +411,9 @@ public class UIController {
                         removedCounter = adventureManager.removeMonsterFromEncounter(encounterMonsters, monstersQuantityAndNames, monsterDeleteOption, lastQuantity, monsterQuantity, auxEncounter);
 
                         lastQuantity = lastQuantity - removedCounter;
+
+                        monsterToBeErased = monsterToBeErased.replaceAll("\\d","");
+                        System.out.println(monsterToBeErased);
 
                         uiManager.showMessage(removedCounter + " " + monsterToBeErased  + " were removed from the encounter.");
                     }
@@ -1159,14 +1162,26 @@ public class UIController {
                 uiManager.showMessage("--------------------");
                 uiManager.showMessage("*** Short rest stage ***");
                 uiManager.showMessage("--------------------");
+                int xpSum = 0;
                 i = 0;
                 boolean levelUp = false;
+                while(i < monstersInEncounter.size()){
+                    xpSum = xpSum + monstersInEncounter.get(i).getMonsterXpDrop();
+                    i++;
+                }
+                i = 0;
                 while(i < characterQuantity){
+
+                    levelUp = characterManager.levelUpCheck(xpSum, characterInParty.get(i).getCharacterLevel());
+
                     if(levelUp){
-                        uiManager.showMessage("characterName gains sumallmonstersexperience xp. characterName levels up. They are now lvl 5!");
+
+                        characterManager.levelUpdate(characterInParty.get(i), xpSum);
+                        uiManager.showMessage(characterInParty.get(i).getCharacterName() + " gains " + xpSum + " xp." + characterInParty.get(i).getCharacterName() + " levels up. They are now lvl " + characterManager.revertXpToLevel(characterInParty.get(i).getCharacterLevel()) + "!");
 
                     }else{
-                        uiManager.showMessage("characterName gains sumallmonstersexperience xp");
+                        characterManager.levelUpdate(characterInParty.get(i), xpSum);
+                        uiManager.showMessage(characterInParty.get(i).getCharacterName() + " gains " + xpSum + " xp.");
                     }
 
                     i++;

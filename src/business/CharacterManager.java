@@ -189,6 +189,9 @@ public class CharacterManager {
         int upperbound = 7;
         roll = rand.nextInt(upperbound);
 
+        if(roll == 0){
+            roll = 1;
+        }
         return roll;
     }
 
@@ -321,6 +324,21 @@ public class CharacterManager {
         return correct;
     }
 
+    public boolean levelUpCheck(int xp, int playerLevel){
+
+        boolean levelUp = false;
+
+        int pastLevel = revertXpToLevel(playerLevel);
+        int actualLevel = revertXpToLevel(playerLevel + xp);
+        int auxCheck = actualLevel - pastLevel;
+        if(auxCheck != 0){
+            levelUp = true;
+        }
+        return levelUp;
+    }
+
+
+
     public ArrayList<Character> filteredPlayers(String playerName){
         ArrayList<Character> characters = characterDAO.readCharacterJSON();
         ArrayList<Character> filteredCharacters = null;
@@ -369,6 +387,9 @@ public class CharacterManager {
     }
     public boolean deleteCharacter(String characterName){
        return characterDAO.deleteCharacterByName(characterName);
+    }
+    public void levelUpdate(Character character, int gainedXp){
+        characterDAO.updateCharacterLevel(character,gainedXp);
     }
 
 

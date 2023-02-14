@@ -456,5 +456,87 @@
         }
       ]
     ]
+  },
+  {
+    "name": "paseo",
+    "encounters": 2,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ]
+    ]
   }
 ]

@@ -38,6 +38,29 @@ public class CharacterDAO {
             }
         }
     }
+    public void updateCharacterLevel(Character character, int gainedXp){
+
+        Character[] currentCharacters;
+        FileWriter writer;
+        try
+        {
+            currentCharacters = gson.fromJson(gson.newJsonReader(new FileReader(String.valueOf(characterPath))), Character[].class);
+            ArrayList<Character> characters = new ArrayList<>(Arrays.asList(currentCharacters));
+            for (int i = 0; i < characters.size(); i++) {
+                if (Objects.equals(character.getCharacterName(), characters.get(i).getCharacterName()))
+                {
+                    characters.get(i).setXp(gainedXp + character.getCharacterLevel());
+                    i = characters.size();
+                }
+            }
+
+            writer = new FileWriter(String.valueOf(characterPath));
+            gson.toJson(characters, writer);
+            writer.close();
+        }
+        catch (IOException ignored) {}
+
+    }
 
     public boolean deleteCharacterByName(String name)
     {

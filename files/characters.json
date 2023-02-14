@@ -2,7 +2,7 @@
   {
     "name": "Amrod",
     "player": "SonsOfFeanor",
-    "xp": 229,
+    "xp": 277,
     "body": 2,
     "mind": 0,
     "spirit": 0
@@ -10,7 +10,7 @@
   {
     "name": "Caranthir",
     "player": "SonsOfFeanor",
-    "xp": 306,
+    "xp": 354,
     "body": 2,
     "mind": 0,
     "spirit": 1
@@ -18,7 +18,7 @@
   {
     "name": "Curufin",
     "player": "SonsOfFeanor",
-    "xp": 286,
+    "xp": 310,
     "body": 1,
     "mind": 1,
     "spirit": 1
@@ -98,7 +98,7 @@
   {
     "name": "Percival Fredrickstein von Musel Klossowski de Rolo III",
     "player": "Critter9",
-    "xp": 499,
+    "xp": 523,
     "body": 1,
     "mind": -1,
     "spirit": 1
@@ -120,27 +120,19 @@
     "spirit": -1
   },
   {
-    "name": "raulillo",
-    "player": "raulincher13",
-    "xp": 900,
-    "body": 2,
-    "mind": 2,
-    "spirit": 1
-  },
-  {
-    "name": "goku",
-    "player": "raulincher13",
-    "xp": 200,
-    "body": 1,
-    "mind": 2,
-    "spirit": 2
-  },
-  {
     "name": "Jose",
     "player": "Pedrito91",
     "xp": 100,
     "body": 0,
     "mind": 0,
     "spirit": -1
+  },
+  {
+    "name": "Raul",
+    "player": "raulincher",
+    "xp": 900,
+    "body": 0,
+    "mind": 3,
+    "spirit": 1
   }
 ]
