@@ -1184,6 +1184,9 @@ public class UIController {
                         uiManager.showMessage(characterInParty.get(i).getCharacterName() + " gains " + xpSum + " xp.");
                     }
 
+                    characterInParty.set(i,characterManager.getCharacterByName(characterInParty.get(i).getCharacterName()));
+                    //System.out.println(characterManager.getCharacterByName(characterInParty.get(i).getCharacterName()));
+
                     i++;
 
                 }

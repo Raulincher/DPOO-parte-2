@@ -385,6 +385,22 @@ public class CharacterManager {
 
         return filteredCharacters;
     }
+
+    public Character getCharacterByName(String characterName){
+        ArrayList<Character> characters = characterDAO.readCharacterJSON();
+        Character filteredCharacter = null;
+
+        int i = 0;
+
+        while(i < characters.size()){
+            if(characters.get(i).getCharacterName().toLowerCase(Locale.ROOT).contains(characterName.toLowerCase(Locale.ROOT))){
+                filteredCharacter = characters.get(i);
+                i = characters.size();
+            }
+            i++;
+        }
+        return filteredCharacter;
+    }
     public boolean deleteCharacter(String characterName){
        return characterDAO.deleteCharacterByName(characterName);
     }
