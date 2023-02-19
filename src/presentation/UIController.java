@@ -51,17 +51,13 @@ public class UIController {
                 }
                 i = 0;
                 ArrayList<Adventure> adventures = adventureManager.getAdventuresList();
-                for (Adventure adventure: adventures) {
-                    i++;
-                    totalAdventures = i;
-                }
                 if(totalCharacters < 3){
                     uiManager.showMainMenuDissabled();
                     option = uiManager.askForInteger("\nYour answer: ");
                     if(option != 4){
                         executeOption(option);
                     }
-                }else if(totalAdventures == 0){
+                }else if(adventures == null){
                     uiManager.showMainMenu();
                     option = uiManager.askForInteger("\nYour answer: ");
                     if(option != 4){

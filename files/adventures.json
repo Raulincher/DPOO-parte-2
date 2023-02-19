@@ -538,5 +538,100 @@
         }
       ]
     ]
+  },
+  {
+    "name": "paseo 2.0",
+    "encounters": 4,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Sauron",
+          "challenge": "Boss",
+          "experience": 148,
+          "hitPoints": 89,
+          "initiative": 3,
+          "damageDice": "d20",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Sauron",
+          "challenge": "Boss",
+          "experience": 148,
+          "hitPoints": 89,
+          "initiative": 3,
+          "damageDice": "d20",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Sauron",
+          "challenge": "Boss",
+          "experience": 148,
+          "hitPoints": 89,
+          "initiative": 3,
+          "damageDice": "d20",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Sauron",
+          "challenge": "Boss",
+          "experience": 148,
+          "hitPoints": 89,
+          "initiative": 3,
+          "damageDice": "d20",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Snaga",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 4,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Snaga",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 4,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Snaga",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 4,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ]
+    ]
   }
 ]
