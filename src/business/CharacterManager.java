@@ -16,10 +16,26 @@ public class CharacterManager {
     CharacterDAO characterDAO;
 
     // Creamos constructores
+    /**
+     * Esta función servirá para construir el CharacterManager
+     *
+     * @param characterDAO, lo vincularemos con su respectivo DAO
+     */
     public CharacterManager(CharacterDAO characterDAO){
         this.characterDAO = characterDAO;
     }
 
+    /**
+     * Esta función servirá para crear un character
+     *
+     * @param characterName, el nombre deseado del personaje
+     * @param playerName, el nombre del jugador
+     * @param characterLevel, el nivel deseado del personaje
+     * @param body, el body deseado del personaje
+     * @param mind, el mind deseado del personaje
+     * @param spirit, el espíritu deseado del personaje
+     * @return se guardará a través del DAO el personaje creado
+     */
     public boolean createCharacter(String characterName, String playerName, int characterLevel, int body, int mind, int spirit){
         return characterDAO.saveCharacter(new Character(characterName, playerName, characterLevel, body, mind, spirit));
     }
