@@ -633,5 +633,80 @@
         }
       ]
     ]
+  },
+  {
+    "name": "Champions League",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Crebain",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 7,
+          "initiative": 1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Orc",
+          "challenge": "Minion",
+          "experience": 3,
+          "hitPoints": 9,
+          "initiative": -1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Orc",
+          "challenge": "Minion",
+          "experience": 3,
+          "hitPoints": 9,
+          "initiative": -1,
+          "damageDice": "d6",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Mirkwood Spider",
+          "challenge": "Minion",
+          "experience": 5,
+          "hitPoints": 9,
+          "initiative": 1,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Smaug",
+          "challenge": "Boss",
+          "experience": 104,
+          "hitPoints": 61,
+          "initiative": 2,
+          "damageDice": "d20",
+          "damageType": "Physical"
+        }
+      ]
+    ]
   }
 ]
