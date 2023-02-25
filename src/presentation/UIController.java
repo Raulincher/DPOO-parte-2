@@ -379,6 +379,7 @@ public class UIController {
                         }
 
                         if(exist){
+                            lastQuantity = - monsterQuantity + lastQuantity;
                             uiManager.showMessage("\nTavern keeper: “You can't add more than 2 different type of boss in your encounter”");
                         }else {
                             adventureManager.setMonstersEncounter(monsters, encounterMonsters, monsterOption, lastQuantity, monsterQuantity, auxEncounter);
