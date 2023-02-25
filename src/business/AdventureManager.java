@@ -6,8 +6,6 @@ import business.entities.Character;
 import persistance.AdventureDAO;
 
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Objects;
 
 public class AdventureManager {
 
@@ -18,7 +16,6 @@ public class AdventureManager {
     public AdventureManager(AdventureDAO adventureDAO, CharacterManager characterManager){
         this.adventureDAO = adventureDAO;
         this.characterManager = characterManager;
-
     }
 
     public void setMonstersEncounter(ArrayList<Monster> monsters, ArrayList<ArrayList<Monster>> encounterMonsters, int monsterOption, int lastQuantity ,int monsterQuantity, int auxEncounter){
