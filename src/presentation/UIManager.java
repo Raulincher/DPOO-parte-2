@@ -18,13 +18,15 @@ public class UIManager {
     public UIManager(){this.scanner = new Scanner(System.in);}
 
     /**
-     * Esta función servirá para dar la bienvenida al usuario
+     * Esta función servirá para mostrar el menú de selección de archivos
      * No tendrá ni param ni return
      */
-    public void loadData(){
-        System.out.println("Welcome to Simple LSRPG");
-        System.out.println("\n\nLoading data...");
+    public void showDataMenu(){
+        System.out.println("Do you want to use your local or cloud data?\n");
+        System.out.println("\n\t1) Local data");
+        System.out.println("\t2) Cloud Data");
     }
+
 
     /**
      * Esta función servirá para enseñar el menú al usuario

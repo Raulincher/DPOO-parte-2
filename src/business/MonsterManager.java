@@ -19,7 +19,6 @@ public class MonsterManager {
      * @param monsterDAO, lo vincularemos con su respectivo DAO
      */
     public MonsterManager(MonsterDAO monsterDAO) {
-
         this.monsterDAO = monsterDAO;
     }
 

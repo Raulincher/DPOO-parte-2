@@ -31,18 +31,13 @@ public class UIController {
         int option;
         int i = 0;
         int totalCharacters = 0;
-        int totalAdventures = 0;
-        boolean validationMonster = true;
-
 
         uiManager.showMessage("Welcome to Simple LSRPG.\n");
         uiManager.showMessage("\nLoading data...");
+
         ArrayList<Monster> monsters = monsterManager.getAllMonsters();
-
         if(monsters.size() > 0){
-
             uiManager.showMessage("Data was successfully loaded.\n\n\n");
-
             do {
                 ArrayList<Character> characters = characterManager.getAllCharacters();
                 for (Character character: characters) {
@@ -276,7 +271,7 @@ public class UIController {
         }
     }
 
-    public void adventureCreation(){
+    private void adventureCreation(){
 
         int error = 0;
         int adventureEncounters = 0;
@@ -384,6 +379,7 @@ public class UIController {
                         }
 
                         if(exist){
+                            lastQuantity = - monsterQuantity + lastQuantity;
                             uiManager.showMessage("\nTavern keeper: “You can't add more than 2 different type of boss in your encounter”");
                         }else {
                             adventureManager.setMonstersEncounter(monsters, encounterMonsters, monsterOption, lastQuantity, monsterQuantity, auxEncounter);
@@ -443,7 +439,7 @@ public class UIController {
     }
 
 
-    public void adventurePlay(){
+    private void adventurePlay(){
         int characterQuantity = 0;
         int adventureSelection = 0;
         double average = 0;
