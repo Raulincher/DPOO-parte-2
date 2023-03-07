@@ -708,5 +708,80 @@
         }
       ]
     ]
+  },
+  {
+    "name": "Juan",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ],
+      [
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        },
+        {
+          "name": "Snuffler",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 6,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical"
+        }
+      ]
+    ]
   }
 ]
