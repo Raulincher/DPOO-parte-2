@@ -1,8 +1,14 @@
 package business.entities;
 
-public class Character {
+import com.google.gson.annotations.Expose;
 
+import java.util.Random;
+
+public class Character {
+    int actualLife, totalLife;
+    @Expose
     String name, player;
+    @Expose
     int xp, body, mind, spirit;
 
     //Creamos constructor con todos los atributos
@@ -16,13 +22,15 @@ public class Character {
      * @param mind, mind del Character
      * @param spirit, spirit del Character
      */
-    public Character(String characterName, String playerName, int characterLevel, int body, int mind, int spirit){
+    public Character(String characterName, String playerName, int characterLevel, int body, int mind, int spirit, int actualLife, int totalLife){
         this.name = characterName;
         this.player = playerName;
         this.xp = characterLevel;
         this.body = body;
         this.mind = mind;
         this.spirit = spirit;
+        this.actualLife = actualLife;
+        this.totalLife = totalLife;
     }
 
     /**
@@ -94,4 +102,145 @@ public class Character {
      * @param spirit, que será el nuevo spirit del character
      */
     public void setSpirit(int spirit) {this.spirit = spirit;}
+
+
+    public int getTotalLife() {
+        return totalLife;
+    }
+
+    public void setTotalLife(int totalLife) {
+        this.totalLife = totalLife;
+    }
+
+    public int getActualLife() {
+        return actualLife;
+    }
+
+
+    public void setActualLife(int actualLife) {
+        this.actualLife = actualLife;
+    }
+
+    /**
+     * Esta función servirà para calcular la vida inicial
+     * de cada personaje
+     *
+     * @param level, que será el nivel
+     * @return life, vida que tendrá el personaje
+     */
+    public int initialLifeCalculator(int level) {
+        int life;
+        int body = getBody();
+
+        // Calculamos la vida con la fórmula
+        life = (10 + body) * level;
+
+        return life;
+    }
+
+    /**
+     * Esta función servirá para calcular la iniciativa del
+     * personaje
+     *
+     * @return initiative, iniciativa del personaje
+     */
+    public int initiative() {
+        int initiative;
+        int spirit = getSpirit();
+        int d12 = diceRollD12();
+
+        // Calculamos la iniciativa del adventuer
+        initiative = d12 + spirit;
+
+        return initiative;
+    }
+
+
+    /**
+     * Esta función servirá para realizar el ataque Sword Slash
+     * del adventurer
+     *
+     *
+     * @return ataque del personaje
+     */
+    public int attack(){
+        int body = getBody();
+        int d6 = diceRollD6();
+        // Calculamos con la fórmula
+        return d6 + body;
+    }
+
+
+    /**
+     * Esta función servirá para calcular cuánto se curará
+     * el adventurer
+     *
+     * @return curación del personaje
+     */
+    public int bandageTime(){
+        int mind = getMind();
+        int d8 = diceRollD8();
+        // Calculamos con la fórmula
+        return mind + d8;
+    }
+
+    /**
+     * Esta función genera un número entre el 1 y el 12 simulando tirar
+     * un dado de 12 caras
+     *
+     * La usamos en los hijos de la clase Character
+     *
+     * @return roll, int que será el número random generado
+     */
+    public int diceRollD12(){
+        int roll;
+
+        // Usaremos la clase Random para sacar el número aleatorio con upperbound de 12
+        Random rand = new Random();
+        int upperbound = 12;
+        roll = rand.nextInt(upperbound) + 1;
+
+        return roll;
+    }
+
+
+    /**
+     * Esta función genera un número entre el 1 y el 6 simulando tirar
+     * un dado de 6 caras
+     *
+     * La usamos en los hijos de la clase Character
+     *
+     * @return roll, int que será el número random generado
+     */
+    public int diceRollD6(){
+        int roll;
+
+        // Usaremos la clase Random para sacar el número aleatorio con upperbound de 7
+        Random rand = new Random();
+        int upperbound = 6;
+        roll = rand.nextInt(upperbound) + 1;
+
+        return roll;
+    }
+
+
+    /**
+     * Esta función genera un número entre el 1 y el 8 simulando tirar
+     * un dado de 8 caras
+     *
+     * La usamos en los hijos de la clase Character
+     *
+     * @return roll, int que será el número random generado
+     */
+    public int diceRollD8(){
+        int roll;
+
+        // Usaremos la clase Random para sacar el número aleatorio con upperbound de 9
+        Random rand = new Random();
+        int upperbound = 8;
+        roll = rand.nextInt(upperbound) + 1;
+
+        return roll;
+    }
+
 }

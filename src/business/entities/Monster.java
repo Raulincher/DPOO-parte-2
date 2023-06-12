@@ -8,6 +8,7 @@ public class Monster {
     int initiative;
     String damageDice;
     String damageType;
+    int actualHitPoints;
 
     //Creamos constructor con todos los atributos
     /**
@@ -20,7 +21,7 @@ public class Monster {
      * @param monsterDice, dado de daño del Monster
      * @param damageType, tipo de daño del Monster
      */
-    public Monster(String monsterName, String monsterChallenge, int monsterXpDrop, int monsterHitPoints, int monsterInitiative, String monsterDice, String damageType){
+    public Monster(String monsterName, String monsterChallenge, int monsterXpDrop, int monsterHitPoints, int monsterInitiative, String monsterDice, String damageType, int actualHitPoints){
         this.name = monsterName;
         this.challenge = monsterChallenge;
         this.experience = monsterXpDrop;
@@ -28,6 +29,7 @@ public class Monster {
         this.initiative = monsterInitiative;
         this.damageDice = monsterDice;
         this.damageType = damageType;
+        this.actualHitPoints = actualHitPoints;
     }
 
     /**
@@ -93,4 +95,12 @@ public class Monster {
         return damageDice;
     }
 
+
+    public void setActualHitPoints(int actualHitPoints) {
+        this.actualHitPoints = actualHitPoints;
+    }
+
+    public int getActualHitPoints() {
+        return actualHitPoints;
+    }
 }

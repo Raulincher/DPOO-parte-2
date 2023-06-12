@@ -189,7 +189,7 @@ public class AdventureManager {
 
         // Si el monster que queremos añadir es un boss, y hay más de 2 bosses en el encuentro
         // activamos bool
-        if(monstersList.get(option - 1).getMonsterChallenge().equals("Boss") && bossCounter > 2){
+        if(monstersList.get(option - 1).getMonsterChallenge().equals("Boss") && bossCounter >= 1){
             exist = true;
         }
 
@@ -229,23 +229,126 @@ public class AdventureManager {
      * de los personajes
      *
      * @param characterInParty, lista de todos los personajes en el grupo
-     * @param charactersLife, lista de personajes con sus vidas
      */
-    public void setAdventurersLifeList(ArrayList<Character> characterInParty, ArrayList<String> charactersLife){
-        int z;
-        int characterInitialLife = 0;
-
+    public void setAdventurersLifeList(ArrayList<Character> characterInParty){
+        int z = 0;
         // Abrimos un if para comprobar si hay alguna vida establecida
-        if(charactersLife.size() == 0) {
-            z = 0;
+        while(z < characterInParty.size()) {
+            characterInParty.get(z).setTotalLife(characterInParty.get(z).initialLifeCalculator(characterManager.revertXpToLevel(characterInParty.get(z).getCharacterLevel())));
+            characterInParty.get(z).setActualLife(characterInParty.get(z).getTotalLife());
+            z++;
+        }
+    }
 
-            // Iniciamos un bucle para calcular todas las respectivas vidas
-            while (z < characterInParty.size()) {
-                characterInitialLife = characterManager.initialLifeCalculator(characterInParty.get(z).getCharacterName());
-                charactersLife.add(z, characterInParty.get(z).getCharacterName() + characterInitialLife + "/" + characterInitialLife);
-                z++;
+    /**
+     * Esta función servirá para contar los monstruos vivos de la batalla
+     *
+     * @param monsters lista con todas los monstruos en batalla
+     * @return counter, contador de monstruos vivos
+     */
+    public int countAliveMonsters(ArrayList<Monster> monsters){
+        int counter = 0;
+        for (Monster monster : monsters) {
+            if (monster.getActualHitPoints() > 0) {
+                counter++;
             }
         }
+        return counter;
+    }
+
+    /**
+     * Esta función servirá para contar los personajes que estén
+     * muertos en ese instante
+     *
+     * @param characters lista con todos los characters en batalla
+     * @return número total de muertos
+     */
+    public int countDeadCharacters(ArrayList<Character> characters){
+        int deadCounter = 0;
+
+        // A través de un bucle revisamos cuáles no tienen vida
+        for (Character character : characters) {
+            int actualLife = character.getActualLife();
+            if (actualLife == 0) {
+                deadCounter++;
+            }
+        }
+
+        return deadCounter;
+    }
+
+
+    /**
+     * Esta función servirá para buscar el monster que tenga menos vida
+     *
+     * @param monsters lista con todas los monstruos en batalla
+     * @return índice del monster con menos vida
+     */
+    public int smallestEnemyLife(ArrayList<Monster> monsters){
+        int index = 0;
+        int z = 0;
+        int smallerMonsterLife = 0;
+        int flag = 0;
+
+        // Abrimos bucle a través de la lista de vidas de los monsters
+        while(z < monsters.size()){
+            int actualLife = monsters.get(z).getActualHitPoints();
+            // Iremos comparando entre ellas, en caso de que se detecte una menor actualizaremos índice
+            if (actualLife != 0) {
+                if (flag == 0) {
+                    smallerMonsterLife = actualLife;
+                    index = z;
+                    flag = 1;
+                } else {
+                    if (smallerMonsterLife > actualLife) {
+                        smallerMonsterLife = actualLife;
+                        index = z;
+                    }
+                }
+            }
+            z++;
+        }
+
+        return index;
+    }
+
+
+
+    /**
+     * Esta función servirá para buscar el personaje que tenga menos vida
+     *
+     * @param characters lista con todos los characters en batalla
+     * @return índice del personaje con menos vida
+     */
+    public int smallestCharacterLife(ArrayList<Character> characters){
+        int z = 0;
+        int flag = 0;
+        int index = 0;
+        int smallerCharacterLife = 0;
+
+        // Abrimos bucle a través de toda la lista de vidas
+        while(z < characters.size()){
+
+            int actualLife = characters.get(z).getActualLife();
+
+            // Si el personaje no está muerto iremos comparando vida por vida
+            if(actualLife != 0){
+                if(flag == 0){
+                    smallerCharacterLife = actualLife;
+                    index = z;
+                    flag = 1;
+                }
+                // En caso de que la nueva vida de la lista sea menor, actualizamos el índice del personaje
+                else{
+                    if(smallerCharacterLife > actualLife){
+                        smallerCharacterLife = actualLife;
+                        index = z;
+                    }
+                }
+            }
+            z++;
+        }
+        return index;
     }
 
     /**
@@ -263,16 +366,40 @@ public class AdventureManager {
         // Iniciamos un bucle que recorra todas las prioridades
         while(i < listOfPriorities.size()){
             z = 0;
-            String[] auxName = listOfPriorities.get(i).split("\\d+");
-            String actualName = auxName[0];
+            String[] auxName;
+            String actualName;
+            int actualInitiative;
             auxFlag = false;
-            int actualInitiative = Integer.parseInt(listOfPriorities.get(i).replaceAll("[^0-9]", ""));
+
+            //comprobamos si la iniciativa es negativa
+            if(listOfPriorities.get(i).contains("-")){
+                auxName = listOfPriorities.get(i).split("-");
+                actualName = auxName[0];
+                String auxInitiative = auxName[1];
+                actualInitiative = Integer.parseInt("-" + auxInitiative);
+            }else{
+                auxName = listOfPriorities.get(i).split("\\d+");
+                actualName = auxName[0];
+                actualInitiative = Integer.parseInt(listOfPriorities.get(i).replaceAll("[^0-9]", ""));
+            }
 
             // Volvemos a recorrer las prioridades con otro contador para poder compararlas
             while(z < listOfPriorities.size()){
-                String[] auxCompareName = listOfPriorities.get(z).split("\\d+");
-                String compareName = auxCompareName[0];
-                int compareInitiative = Integer.parseInt(listOfPriorities.get(z).replaceAll("[^0-9]", ""));
+                String[] auxCompareName;
+                String compareName;
+                int compareInitiative;
+
+                //comprobamos si la iniciativa es negativa
+                if(listOfPriorities.get(z).contains("-")){
+                    auxCompareName = listOfPriorities.get(z).split("-");
+                    compareName = auxCompareName[0];
+                    String auxInitiative = auxCompareName[1];
+                    compareInitiative = Integer.parseInt("-" + auxInitiative);
+                }else{
+                    auxCompareName = listOfPriorities.get(z).split("\\d+");
+                    compareName = auxCompareName[0];
+                    compareInitiative = Integer.parseInt(listOfPriorities.get(z).replaceAll("[^0-9]", ""));
+                }
 
                 // Comparamos iniciativas para cambiar el orden
                 if(actualInitiative < compareInitiative && i < z){
@@ -298,31 +425,30 @@ public class AdventureManager {
      * @param characterInParty, lista de personajes en el grupo
      * @param characterQuantity, int con el num de personajes
      * @param monsterQuantity, int con el num de monsters
-     * @param diceRoll, int con el num aleatorio para calcular las iniciativas
      * @param monstersInEncounter lista con los monsters del encuentro
      * @return listOfPriorities, lista de prioridades sin ordenar
      */
-    public ArrayList<String> listOfPriorities(int characterQuantity, int monsterQuantity, int diceRoll, ArrayList<Character> characterInParty, ArrayList<Monster> monstersInEncounter){
+    public ArrayList<String> listOfPriorities(int characterQuantity, int monsterQuantity, ArrayList<Character> characterInParty, ArrayList<Monster> monstersInEncounter){
         ArrayList<String> listOfPriorities = new ArrayList<>(0);
         int i = 0;
         int z = 0;
-        int characterSpirit = 0;
-        int characterInitiative = 0;
+        int characterInitiative;
+        int diceroll;
 
         // Iniciamos un bucle que dure la cantidad de personajes y monsters combinada
         while(i < characterQuantity + monsterQuantity){
 
             // Recogemos todas las iniciativas de los personajes
             if(i < characterInParty.size()){
-                characterSpirit = characterInParty.get(i).getSpirit();
-                characterInitiative = diceRoll + characterSpirit;
+                characterInitiative = characterInParty.get(i).initiative();
                 listOfPriorities.add(z, characterInParty.get(i).getCharacterName() + characterInitiative);
                 z++;
             }
 
             // Recogemos todas las iniciativas de los monsters
             if(i < monstersInEncounter.size()){
-                listOfPriorities.add(z,monstersInEncounter.get(i).getMonsterName() + monstersInEncounter.get(i).getMonsterInitiative());
+                diceroll = characterManager.diceRollD12();
+                listOfPriorities.add(z,monstersInEncounter.get(i).getMonsterName() + (monstersInEncounter.get(i).getMonsterInitiative() * diceroll));
                 z++;
             }
             i++;
@@ -347,6 +473,102 @@ public class AdventureManager {
             encounterMonsters.get(i).add(0,null);
         }
         return encounterMonsters;
+    }
+
+
+    /**
+     * Esta función realiza los cálculos de daño de los diferentes PJs
+     *
+     * @param character, personaje que ataca
+     *
+     * @return damage, daño bruto calculado
+     */
+    public int calculateDamage(Character character){
+        int damage;
+
+        //función de la clase padre Character
+        damage = character.attack();
+
+        return damage;
+    }
+
+    /**
+     * Esta función permite determinar si un ataque ha fallado
+     *
+     * @param isCrit, indice que indica cuando un ataque es critico, normal o fallo
+     *
+     * @return boolean que indica el fallo
+     */
+    public boolean failedAttack(int isCrit){
+        return isCrit != 1 && isCrit != 2;
+    }
+
+
+    /**
+     * Esta función servirá para tratar el daño que recibirán los personajes, a excepción del mago
+     *
+     * @param actualLife, vida actual del mago
+     * @param isCrit, indice que indica si el golpe es critico
+     * @param damage, indicador del daño que se recibe
+     *
+     * @return total, int que devolverá el total de vida restante del personaje
+     */
+    public int applyDamage(int isCrit, int actualLife, int damage ){
+        int total = 0;
+
+        if(isCrit == 2){
+            total = actualLife - (damage*2);
+            if(total < 0){
+                total = 0;
+            }
+        }else if(isCrit == 1){
+            total = actualLife - (damage);
+            if(total < 0){
+                total = 0;
+            }
+        }
+
+        return total;
+    }
+
+
+    /**
+     * Esta función servirá para sumar toda la exp que sueltan los monstruos al vencer en un encuentro
+     *
+     * @param monstersInEncounter, lista con lso monstruos dentro del encuentro
+     *
+     * @return xpSum, int. que representa la suma total de toda la exp
+     */
+    public int sumAllMonsterXp(ArrayList<Monster> monstersInEncounter){
+        int xpSum = 0, i = 0;
+        while(i < monstersInEncounter.size()){
+            xpSum = xpSum + monstersInEncounter.get(i).getMonsterXpDrop();
+            i++;
+        }
+        return xpSum;
+    }
+
+
+    /**
+     * Esta función servirá para que los PJ usen las habilidades en la fase de descanso
+     *
+     * @param character, PJ que usará la habilidad
+     *
+     * @return curation, número que nos dirá la cantidad de curación realizada por el PJ. En el caso de que su habilidad trate de eso
+     */
+    public int applyAbilitiesRestPhase(Character character){
+
+        int curation = 0;
+        int total;
+        //efectuamos habilidad
+        curation = character.bandageTime();
+        total = character.getActualLife() + curation;
+        if(total >= character.getTotalLife()){
+            total = character.getTotalLife();
+        }
+        character.setActualLife(total);
+
+        return curation;
     }
 
     /**

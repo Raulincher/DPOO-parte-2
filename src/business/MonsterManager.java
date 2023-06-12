@@ -159,4 +159,31 @@ public class MonsterManager {
         return roll;
     }
 
+    /**
+     * Esta función permite poner la vida actual de los monstruos al máximo
+     * para así dar inicio al encuentro
+     *
+     * @param monsters, lista de los monstruos del encuentro
+     */
+    public void setInitialMonsterLife(ArrayList<Monster> monsters){
+
+        for (Monster monster : monsters) {
+            monster.setActualHitPoints(monster.getMonsterHitPoints());
+        }
+    }
+
+
+    /**
+     * Esta función nos permite saber que número tiene el dado del monstruo
+     *
+     * @param dice, es el tipo de azar que tiene el Monster
+     * @return diceNumber, será el número que tenga el dado en cuestión
+     */
+    public String diceNumber(String dice){
+        String diceNumber;
+        String[] auxDice = dice.split("d");
+        diceNumber = auxDice[1];
+        return diceNumber;
+    }
+
 }

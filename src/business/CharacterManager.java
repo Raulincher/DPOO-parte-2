@@ -37,7 +37,7 @@ public class CharacterManager {
      * @return se guardará a través del DAO el personaje creado
      */
     public boolean createCharacter(String characterName, String playerName, int characterLevel, int body, int mind, int spirit){
-        return characterDAO.saveCharacter(new Character(characterName, playerName, characterLevel, body, mind, spirit));
+        return characterDAO.saveCharacter(new Character(characterName, playerName, characterLevel, body, mind, spirit,0,0));
     }
 
     /**
