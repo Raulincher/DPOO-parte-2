@@ -1,45 +1,57 @@
 [
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Amrod",
     "player": "SonsOfFeanor",
-    "xp": 229,
+    "xp": 2083,
     "body": 2,
     "mind": 0,
     "spirit": 0
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Caranthir",
     "player": "SonsOfFeanor",
-    "xp": 306,
+    "xp": 2160,
     "body": 2,
     "mind": 0,
     "spirit": 1
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Curufin",
     "player": "SonsOfFeanor",
-    "xp": 300,
+    "xp": 2154,
     "body": 1,
     "mind": 1,
     "spirit": 1
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Elendil",
     "player": "Eru Ilúvatar",
-    "xp": 321,
+    "xp": 2175,
     "body": 1,
     "mind": 3,
     "spirit": 2
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Fëanor",
     "player": "SonsOfFeanor",
-    "xp": 421,
+    "xp": 2481,
     "body": 1,
     "mind": 1,
     "spirit": 2
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Finrod Felagund",
     "player": "Eru Il£vatar",
     "xp": 144,
@@ -48,6 +60,8 @@
     "spirit": 0
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Galadriel",
     "player": "Eru Ilúvatar",
     "xp": 132,
@@ -56,6 +70,8 @@
     "spirit": 2
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Hellboy",
     "player": "ComicSans",
     "xp": 167,
@@ -64,6 +80,8 @@
     "spirit": 2
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Jinx",
     "player": "IPlayLOLInClass",
     "xp": 50,
@@ -72,6 +90,8 @@
     "spirit": 2
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Luke Skywalker",
     "player": "Lucas Films",
     "xp": 329,
@@ -80,6 +100,8 @@
     "spirit": -1
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Maedhros",
     "player": "SonsOfFeanor",
     "xp": 348,
@@ -88,6 +110,8 @@
     "spirit": 2
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Niënor Níniel",
     "player": "Eru Ilúvatar",
     "xp": 148,
@@ -96,14 +120,18 @@
     "spirit": 1
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Percival Fredrickstein von Musel Klossowski de Rolo III",
     "player": "Critter9",
-    "xp": 499,
+    "xp": 705,
     "body": 1,
     "mind": -1,
     "spirit": 1
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Túrin Turambar",
     "player": "Eru Ilúvatar",
     "xp": 292,
@@ -112,22 +140,28 @@
     "spirit": 2
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Vi",
     "player": "IPlayLOLInClass",
-    "xp": 844,
+    "xp": 1050,
     "body": 0,
     "mind": 2,
     "spirit": -1
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "raulillo",
     "player": "raulincher13",
-    "xp": 900,
+    "xp": 1106,
     "body": 2,
     "mind": 2,
     "spirit": 1
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "goku",
     "player": "raulincher13",
     "xp": 200,
@@ -136,6 +170,8 @@
     "spirit": 2
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Jose",
     "player": "Pedrito91",
     "xp": 100,
@@ -144,11 +180,23 @@
     "spirit": -1
   },
   {
+    "actualLife": 0,
+    "totalLife": 0,
     "name": "Joan",
     "player": "Ratio",
     "xp": 214,
     "body": 1,
     "mind": 1,
+    "spirit": 1
+  },
+  {
+    "actualLife": 0,
+    "totalLife": 0,
+    "name": "Pepe",
+    "player": "pepes fdd",
+    "xp": 1106,
+    "body": 1,
+    "mind": 0,
     "spirit": 1
   }
 ]

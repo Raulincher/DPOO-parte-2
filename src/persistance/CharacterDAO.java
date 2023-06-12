@@ -33,7 +33,7 @@ public class CharacterDAO {
     public CharacterDAO() {
 
         // Creamos la variable gson y leemos el JSON en cuestión
-        gson = new GsonBuilder().setPrettyPrinting().create();
+        gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 
         File jsonCharacterFile = new File(String.valueOf(characterPath));
 

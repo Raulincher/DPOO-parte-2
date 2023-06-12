@@ -323,6 +323,8 @@ public class UIController {
                 if(erased){
                     uiManager.showMessage("Tavern keeper: I’m sorry kiddo, but you have to leave.\n");
                     uiManager.showMessage("Character " + characterChosen.getCharacterName() + " left the Guild.\n");
+                }else{
+                    uiManager.showMessage("Tavern keeper: Don't worry mate you don't need to decide now. Come later if u want to erase this character\n");
                 }
 
             }else{
@@ -720,6 +722,8 @@ public class UIController {
                 uiManager.showMessage("\t- " + compareInitiative + "   " + compareName);
                 i++;
             }
+            int xpSum = adventureManager.sumAllMonsterXp(monstersInEncounter);
+
 
             // FASE DE COMBATE
             uiManager.showMessage("\n\n--------------------");
@@ -771,6 +775,9 @@ public class UIController {
                     charactersDefeat = adventureManager.countDeadCharacters(characterInParty);
                     auxName = listOfPriorities.get(q).split("\\d+");
                     actualName = auxName[0];
+                    if(actualName.contains("-")){
+                        actualName = actualName.substring(0, actualName.length()-1);
+                    }
                     damage = 0;
 
 
@@ -799,6 +806,8 @@ public class UIController {
                             z++;
                         }
                     }
+
+
 
                     //comprobamos que alguno de los bandos siga en pie (personajes vivos >= 1 && monstruos en batalla > 0)
                     if(charactersDefeat < characterInParty.size() && aliveMonsters > 0){
@@ -842,6 +851,14 @@ public class UIController {
 
                                     total = adventureManager.applyDamage(isCrit, characterInParty.get(smallestCharacterIndex).getActualLife(), damage);
 
+
+
+                                    z = listOfPriorities.size();
+                                    j = monstersInEncounter.size();
+                                    if(damage != 0) {
+                                        uiManager.hitMessage(damage, isCrit);
+                                    }
+
                                     //si el ataque no ha fallado procedemos a restar las vidas
                                     if(!fail){
                                         characterInParty.get(smallestCharacterIndex).setActualLife(total);
@@ -849,12 +866,6 @@ public class UIController {
                                         if (total == 0) {
                                             uiManager.deadMessage(characterInParty.get(smallestCharacterIndex).getCharacterName());
                                         }
-                                    }
-
-                                    z = listOfPriorities.size();
-                                    j = monstersInEncounter.size();
-                                    if(damage != 0) {
-                                        uiManager.hitMessage(damage, isCrit);
                                     }
                                 }
                                 j++;
@@ -883,10 +894,31 @@ public class UIController {
 
                                             //si no hay fallo aplicamos el daño y notificamos la muerte (en caso de haberla)
                                             if(!fail){
+                                                monstersInEncounter.get(smallestMonsterIndex).setActualHitPoints(total);
                                                 if (total == 0) {
                                                     uiManager.showMessage(attackedMonster + " dies.");
+                                                    while(i < listOfPriorities.size()){
+                                                        auxName = listOfPriorities.get(i).split("\\d+");
+                                                        String enemyToErase = auxName[0];
+                                                        if(enemyToErase.contains("-")){
+                                                            enemyToErase = enemyToErase.substring(0, enemyToErase.length()-1);
+                                                        }
+                                                        if(enemyToErase.equals(monstersInEncounter.get(smallestMonsterIndex).getMonsterName())){
+                                                            listOfPriorities.remove(i);
+                                                            if(i < q){
+                                                                q--;
+                                                            }
+                                                            if(q<0){
+                                                                q = 0;
+                                                            }
+                                                            i = listOfPriorities.size();
+                                                        }
+                                                        i++;
+                                                    }
+                                                    monstersInEncounter.remove(smallestMonsterIndex);
+                                                    aliveMonsters--;
+
                                                 }
-                                                monstersInEncounter.get(smallestMonsterIndex).setActualHitPoints(total);
                                             }
                                         }
 
@@ -920,7 +952,6 @@ public class UIController {
                 //FASE DE DESCANSO
                 uiManager.showRestStage();
 
-                int xpSum = adventureManager.sumAllMonsterXp(monstersInEncounter);
                 boolean levelUp;
                 //Cogemos toda la XP del encuentro y la repartimos entre todos los miembros de la party por igual. Todos recibirán toda la cantidad
                 i = 0;

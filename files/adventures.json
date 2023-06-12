@@ -11,7 +11,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -20,7 +21,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -29,7 +31,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -38,7 +41,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -47,7 +51,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -56,7 +61,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -65,7 +71,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -74,7 +81,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -83,7 +91,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -92,7 +101,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -101,7 +111,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -110,7 +121,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -119,7 +131,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -128,7 +141,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -137,7 +151,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -146,7 +161,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -155,7 +171,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Half-orc",
@@ -164,7 +181,8 @@
           "hitPoints": 8,
           "initiative": 0,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -175,7 +193,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snaga",
@@ -184,7 +203,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snaga",
@@ -193,7 +213,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]
@@ -210,7 +231,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snaga",
@@ -219,7 +241,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snaga",
@@ -228,7 +251,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -239,7 +263,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snaga",
@@ -248,7 +273,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -259,7 +285,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snuffler",
@@ -268,7 +295,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]
@@ -285,7 +313,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snaga",
@@ -294,7 +323,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Warg Rider",
@@ -303,7 +333,8 @@
           "hitPoints": 6,
           "initiative": 2,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -314,7 +345,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -325,7 +357,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -334,7 +367,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]
@@ -351,7 +385,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -360,7 +395,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -369,7 +405,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -378,7 +415,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -387,7 +425,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -396,7 +435,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -405,7 +445,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -414,7 +455,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -423,7 +465,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -434,7 +477,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -443,7 +487,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Warg Rider",
@@ -452,7 +497,8 @@
           "hitPoints": 6,
           "initiative": 2,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]
@@ -469,7 +515,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -478,7 +525,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -489,7 +537,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -498,7 +547,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -507,7 +557,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Warg Rider",
@@ -516,7 +567,8 @@
           "hitPoints": 6,
           "initiative": 2,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Warg Rider",
@@ -525,7 +577,8 @@
           "hitPoints": 6,
           "initiative": 2,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Warg Rider",
@@ -534,7 +587,8 @@
           "hitPoints": 6,
           "initiative": 2,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]
@@ -551,7 +605,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -560,7 +615,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Sauron",
@@ -569,7 +625,8 @@
           "hitPoints": 89,
           "initiative": 3,
           "damageDice": "d20",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Sauron",
@@ -578,7 +635,8 @@
           "hitPoints": 89,
           "initiative": 3,
           "damageDice": "d20",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Sauron",
@@ -587,7 +645,8 @@
           "hitPoints": 89,
           "initiative": 3,
           "damageDice": "d20",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Sauron",
@@ -596,7 +655,8 @@
           "hitPoints": 89,
           "initiative": 3,
           "damageDice": "d20",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -607,7 +667,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -618,7 +679,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -629,7 +691,8 @@
           "hitPoints": 4,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]
@@ -646,7 +709,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snuffler",
@@ -655,7 +719,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Crebain",
@@ -664,7 +729,8 @@
           "hitPoints": 7,
           "initiative": 1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -675,7 +741,8 @@
           "hitPoints": 9,
           "initiative": -1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Orc",
@@ -684,7 +751,8 @@
           "hitPoints": 9,
           "initiative": -1,
           "damageDice": "d6",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Mirkwood Spider",
@@ -693,7 +761,8 @@
           "hitPoints": 9,
           "initiative": 1,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -704,7 +773,8 @@
           "hitPoints": 61,
           "initiative": 2,
           "damageDice": "d20",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]
@@ -721,7 +791,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -730,7 +801,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Goblin",
@@ -739,7 +811,8 @@
           "hitPoints": 5,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -750,7 +823,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snuffler",
@@ -759,7 +833,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ],
       [
@@ -770,7 +845,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snuffler",
@@ -779,7 +855,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]
@@ -796,7 +873,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snuffler",
@@ -805,7 +883,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snuffler",
@@ -814,7 +893,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Snuffler",
@@ -823,7 +903,8 @@
           "hitPoints": 6,
           "initiative": 0,
           "damageDice": "d4",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
         },
         {
           "name": "Sauron",
@@ -832,7 +913,86 @@
           "hitPoints": 89,
           "initiative": 3,
           "damageDice": "d20",
-          "damageType": "Physical"
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        }
+      ]
+    ]
+  },
+  {
+    "name": "prueba 1",
+    "encounters": 1,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Glaurung the Great Worm",
+          "challenge": "Boss",
+          "experience": 140,
+          "hitPoints": 81,
+          "initiative": 3,
+          "damageDice": "d20",
+          "damageType": "Psychical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Mumakil",
+          "challenge": "Minion",
+          "experience": 11,
+          "hitPoints": 29,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Mumakil",
+          "challenge": "Minion",
+          "experience": 11,
+          "hitPoints": 29,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Mumakil",
+          "challenge": "Minion",
+          "experience": 11,
+          "hitPoints": 29,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Mumakil",
+          "challenge": "Minion",
+          "experience": 11,
+          "hitPoints": 29,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Mumakil",
+          "challenge": "Minion",
+          "experience": 11,
+          "hitPoints": 29,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Mumakil",
+          "challenge": "Minion",
+          "experience": 11,
+          "hitPoints": 29,
+          "initiative": -1,
+          "damageDice": "d12",
+          "damageType": "Physical",
+          "actualHitPoints": 0
         }
       ]
     ]

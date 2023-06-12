@@ -380,6 +380,7 @@ public class AdventureManager {
             }else{
                 auxName = listOfPriorities.get(i).split("\\d+");
                 actualName = auxName[0];
+
                 actualInitiative = Integer.parseInt(listOfPriorities.get(i).replaceAll("[^0-9]", ""));
             }
 
