@@ -350,14 +350,23 @@ public class UIController {
         int totalMonsters = 0;
         int monsterOption;
         int monsterDeleteOption;
-        boolean adventureSaved;
+        boolean adventureSaved, exist;
+        String adventureName = null;
 
         // Preguntamos por los datos de la adventure
         uiManager.showMessage("Tavern keeper: Planning an adventure? Good luck with that!\n");
-        String adventureName = uiManager.askForString("-> Name your adventure: ");
-
+        while(error == 0 ) {
+            adventureName = uiManager.askForString("-> Name your adventure: ");
+            exist = adventureManager.adventureNameDisponibility(adventureName);
+            if(exist){
+                uiManager.showMessage("\nTavern keeper: Sorry lad this adventure name already exists\n");
+            }else{
+                error = 1;
+            }
+        }
         uiManager.showMessage("\nTavern keeper: You plan to undertake " + adventureName + " , really?\n" + "How long will that take?\n");
 
+        error = 0;
         // Nos aseguramos de que se introduzcan correctamente el número de encuentros
         while(error == 0) {
             adventureEncounters = uiManager.askForInteger("-> How many encounters do you want [1..4]: ");
@@ -384,7 +393,7 @@ public class UIController {
             do {
                 uiManager.showMessage("\n\n* Encounter " + (auxEncounter + 1) + " / " + adventureEncounters + "");
                 uiManager.showMessage("* Monsters in encounter");
-                boolean exist = false;
+                exist = false;
 
                 // Abrimos if / else para mostrar los monsters que ya estén añadidos
                 if(encounterMonsters.get(auxEncounter).get(0) != null){

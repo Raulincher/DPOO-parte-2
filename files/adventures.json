@@ -996,5 +996,61 @@
         }
       ]
     ]
+  },
+  {
+    "name": "pp",
+    "encounters": 1,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        }
+      ]
+    ]
+  },
+  {
+    "name": "ppp",
+    "encounters": 1,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Goblin",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 5,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        }
+      ]
+    ]
   }
 ]

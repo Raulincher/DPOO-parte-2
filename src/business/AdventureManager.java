@@ -6,6 +6,7 @@ import business.entities.Character;
 import persistance.AdventureDAO;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AdventureManager {
 
@@ -22,6 +23,32 @@ public class AdventureManager {
     public AdventureManager(AdventureDAO adventureDAO, CharacterManager characterManager){
         this.adventureDAO = adventureDAO;
         this.characterManager = characterManager;
+    }
+
+
+    /**
+     * Esta función indica si el nombre que se le quiere poner al personaje está ya en
+     * uso o está disponible
+     *
+     * @param name, valor que contendrá el posible nombre del personaje
+     * @return exist, bool que dirá si el nombre está disponible o no
+     */
+    public boolean adventureNameDisponibility(String name){
+
+        boolean exist = false;
+        ArrayList<Adventure> adventures;
+        adventures = adventureDAO.getAllAdventures();
+        int i = 0;
+
+        // Analizamos con un bucle si el nombre coincide en la ArrayList
+        while(i < adventures.size() && !exist){
+            if(name.toLowerCase(Locale.ROOT).matches(adventures.get(i).getAdventureName().toLowerCase(Locale.ROOT))){
+                exist = true;
+            }
+            i++;
+        }
+
+        return exist;
     }
 
     /**
