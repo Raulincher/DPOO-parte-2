@@ -225,34 +225,6 @@ public class AdventureManager {
 
     /**
      * Esta función servirá para crear una lista con todas las vidas
-     * de los monsters
-     *
-     * @param monstersInEncounter, lista de todos los monsters del encuentro
-     * @param monstersLife, lista de monsters con sus vidas
-     * @param listOfPriorities, lista de prioridades
-     * @param characterQuantity, cantidad de personajes del encuentro
-     */
-    public void setMonstersLifeList(ArrayList<String> monstersLife, ArrayList<Monster> monstersInEncounter, ArrayList<String> listOfPriorities, int characterQuantity){
-        int z = 0;
-        int i = 0;
-
-        // Iniciamos bucle que dure toda la lista de prioridades, restado las de los personajes ya que no interesan
-        while(i + characterQuantity < listOfPriorities.size()){
-            String[] auxName = listOfPriorities.get(i + characterQuantity).split("\\d+");
-            String actualName = auxName[0];
-
-            // Si nos encontramos con un monster en esta, guardamos su vida
-            if(monstersInEncounter.get(z).getMonsterName().equals(actualName)){
-                monstersLife.add(i,monstersInEncounter.get(z).getMonsterName() + monstersInEncounter.get(z).getMonsterHitPoints() + "/" + monstersInEncounter.get(z).getMonsterHitPoints());
-                i++;
-                z = 0;
-            }
-            z++;
-        }
-    }
-
-    /**
-     * Esta función servirá para crear una lista con todas las vidas
      * de los personajes
      *
      * @param characterInParty, lista de todos los personajes en el grupo
@@ -654,36 +626,4 @@ public class AdventureManager {
     public boolean createAdventure(String adventureName, int encounters, ArrayList<ArrayList<Monster>> monsters){
         return adventureDAO.saveAdventure(new Adventure(adventureName, encounters, monsters));
     }
-
-    /**
-     * Esta función servirá para crear una adventure
-     *
-     * @param monstersDamage, lista con todos los daños que causarán los monsters
-     * @param monstersInEncounter, lista con todos los monsters del encuentro
-     */
-    public void enemyDice(ArrayList<String> monstersDamage, ArrayList<Monster> monstersInEncounter){
-        int z = 0;
-        int i = 0;
-
-        // Iniciamos un bucle por todos los monsters disponibles
-        while(z < monstersInEncounter.size()){
-
-            // En la primera oleada guardamos el daño
-            if(z == 0){
-                monstersDamage.add(i,monstersInEncounter.get(z).getMonsterName() + " " + monstersInEncounter.get(z).getMonsterDice());
-                i++;
-            }else{
-                String [] auxName = monstersDamage.get(i - 1).split(" ");
-                String actualName = auxName[0];
-
-                // Guardaremos el daño en caso que se trate de otro monster del último daño guardado
-                if(!actualName.equals(monstersInEncounter.get(z).getMonsterName())){
-                    monstersDamage.add(i,monstersInEncounter.get(z).getMonsterName() + " " + monstersInEncounter.get(z).getMonsterDice());
-                    i++;
-                }
-            }
-            z++;
-        }
-    }
-
 }

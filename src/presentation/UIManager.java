@@ -18,17 +18,6 @@ public class UIManager {
     public UIManager(){this.scanner = new Scanner(System.in);}
 
     /**
-     * Esta función servirá para mostrar el menú de selección de archivos
-     * No tendrá ni param ni return
-     */
-    public void showDataMenu(){
-        System.out.println("Do you want to use your local or cloud data?\n");
-        System.out.println("\n\t1) Local data");
-        System.out.println("\t2) Cloud Data");
-    }
-
-
-    /**
      * Esta función servirá para enseñar el menú al usuario
      * No tendrá ni param ni return
      */
@@ -81,17 +70,6 @@ public class UIManager {
      */
     public void showMessage(String message){
         System.out.println(message);
-    }
-
-    /**
-     * Esta función servirá para enseñar la lista con todos los items al usuario
-     *
-     * @param items, LinkedList con todos los items
-     */
-    public void showList(LinkedList<String> items){
-        for (String item : items) {
-            System.out.println("\t* " + item);
-        }
     }
 
     /**

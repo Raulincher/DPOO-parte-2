@@ -78,15 +78,6 @@ public class Monster {
     }
 
     /**
-     * Esta función llamará el tipo de daño del Monster
-     *
-     * @return damageType, que será el tipo de daño del Monster
-     */
-    public String getDamageType() {
-        return damageType;
-    }
-
-    /**
      * Esta función llamará dado de daño del Monster
      *
      * @return damageDice, que será dado de daño del Monster

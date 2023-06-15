@@ -121,110 +121,6 @@ public class CharacterManager {
     }
 
     /**
-     * Función que actualizará el nivel de espíritu que tendrá el personaje
-     * No tiene ni parámetro ni return
-     *
-     */
-    public void updateCharacterSpirit(){
-        ArrayList<Character> characters = characterDAO.readCharacterJSON();
-    }
-
-    /**
-     * Función que servirá para recibir el espíritu que tiene actualmente el personaje
-     *
-     * @param characterName, valor que describe el nombre del personaje
-     * @return spirit, devuelve el espíritu actual que tiene
-     */
-    public int getCharacterSpirit(String characterName){
-        int spirit = 0;
-        int i = 0;
-        ArrayList<Character> characters = characterDAO.readCharacterJSON();
-
-        // A través del bucle recorreremos toda la ArrayList hasta coincidir nombre con personaje
-        while(i < characters.size()){
-            if(characterName.equals(characters.get(i).getCharacterName())){
-                spirit = characters.get(i).getSpirit();
-            }
-            i++;
-        }
-        return spirit;
-    }
-
-    /**
-     * Función que servirá para recibir el valor actual de body que tiene el personaje
-     *
-     * @param characterName, valor que describe el nombre del personaje
-     * @return body, devuelve el valor de body del personaje
-     */
-    public int getCharacterBody(String characterName){
-        int body = 0;
-        int i = 0;
-        ArrayList<Character> characters = characterDAO.readCharacterJSON();
-
-        // A través del bucle recorreremos toda la ArrayList hasta coincidir nombre con personaje
-        while(i < characters.size()){
-            if(characterName.equals(characters.get(i).getCharacterName())){
-                body = characters.get(i).getBody();
-            }
-            i++;
-        }
-        return body;
-    }
-
-    /**
-     * Función que servirá para recibir el valor actual de mind que tiene el personaje
-     *
-     * @param characterName, valor que describe el nombre del personaje
-     * @return mind, devuelve el valor de mind del personaje
-     */
-    public int getCharacterMind(String characterName){
-        int mind = 0;
-        int i = 0;
-        ArrayList<Character> characters = characterDAO.readCharacterJSON();
-
-        // A través del bucle recorreremos toda la ArrayList hasta coincidir nombre con personaje
-        while(i < characters.size()){
-            if(characterName.equals(characters.get(i).getCharacterName())){
-                mind = characters.get(i).getMind();
-            }
-            i++;
-        }
-        return mind;
-    }
-
-    /**
-     * Función que servirá para recibir el valor actual de xp que tiene el personaje
-     *
-     * @param characterName, valor que describe el nombre del personaje
-     * @return xp, devuelve el valor de xp del personaje
-     */
-    public int getCharacterXp(String characterName){
-        int xp = 0;
-        int i = 0;
-        ArrayList<Character> characters = characterDAO.readCharacterJSON();
-
-        // A través del bucle recorreremos toda la ArrayList hasta coincidir nombre con personaje
-        while(i < characters.size()){
-            if(characterName.equals(characters.get(i).getCharacterName())){
-                xp = characters.get(i).getCharacterLevel();
-            }
-            i++;
-        }
-        return xp;
-    }
-
-    /*public int initiativeCalculator(String characterName){
-
-        int roll = diceRollD12();
-        int initiative = 0;
-        int spirit = getCharacterSpirit(characterName);
-
-        initiative = roll + spirit;
-
-        return initiative;
-    }*/
-
-    /**
      * Esta función genera un número entre el 1 y el 12 simulando tirar
      * un dado de 12 caras
      *
@@ -269,75 +165,6 @@ public class CharacterManager {
     }
 
     /**
-     * Esta función genera un número entre el 1 y el 6 simulando tirar
-     * un dado de 6 caras
-     *
-     * @return roll, int que será el número random generado
-     */
-    public int diceRollD6(){
-        int roll = 0;
-
-        // Usaremos la clase Random para sacar el número aleatorio con upperbound de 7
-        Random rand = new Random();
-        int upperbound = 7;
-        roll = rand.nextInt(upperbound);
-
-        if(roll == 0){
-            roll = 1;
-        }
-        return roll;
-    }
-
-    /**
-     * Esta función genera un número entre el 1 y el 8 simulando tirar
-     * un dado de 8 caras
-     *
-     * @return roll, int que será el número random generado
-     */
-    public int diceRollD8(){
-        int roll = 0;
-
-        // Usaremos la clase Random para sacar el número aleatorio con upperbound de 9
-        Random rand = new Random();
-        int upperbound = 9;
-        roll = rand.nextInt(upperbound);
-
-        return roll;
-    }
-
-    /**
-     * Esta función calcula el daño que hará el jugador con su Sword Slash
-     *
-     * @param characterName, valor que contendrá el nombre del personaje
-     * @return damage, int que será el daño que hará el personaje
-     */
-    public int characterDamageCalculator(String characterName){
-        int damage = 0;
-        int body = getCharacterBody(characterName);
-
-        // Seguiremos la fórmula del enunciado para calcular el damage
-        damage = diceRollD6() + body;
-
-        return damage;
-    }
-
-    /**
-     * Esta función calcula la curación que recibirá el jugador
-     *
-     * @param characterName, valor que contendrá el nombre del personaje
-     * @return healing, int que dará la curación total del personaje
-     */
-    public int BandageTime(String characterName){
-        int healing = 0;
-        int mind = getCharacterMind(characterName);
-
-        // Seguiremos la fórmula del enunciado para calcular el healing
-        healing = diceRollD8() + mind;
-
-        return healing;
-    }
-
-    /**
      * Esta función calcula el nivel que tendrá el jugador tras recibir la experiencia
      *
      * @param xp, valor que contendrá la experiencia que ganará el jugador
@@ -370,26 +197,6 @@ public class CharacterManager {
         }
 
         return level;
-    }
-
-    /**
-     * Esta función calcula la vida que tendrá el jugador una vez se haya modificado
-     * al ganar experiencia y subir de nivel
-     *
-     * @param characterName, valor que contendrá el nombre del personaje
-     * @return life, int que será el daño que hará el personaje
-     */
-    public int initialLifeCalculator(String characterName){
-
-        int life;
-        int body = getCharacterBody(characterName);
-        int xp = getCharacterXp(characterName);
-        int level = revertXpToLevel(xp);
-
-        // Calculamos la vida con la fórmula
-        life = (10 + body) * level;
-
-        return life;
     }
 
     /**
@@ -608,6 +415,4 @@ public class CharacterManager {
     public void levelUpdate(Character character, int gainedXp){
         characterDAO.updateCharacterLevel(character,gainedXp);
     }
-
-
 }

@@ -1052,5 +1052,107 @@
         }
       ]
     ]
+  },
+  {
+    "name": "Joan",
+    "encounters": 3,
+    "encounterMonsters": [
+      [
+        {
+          "name": "Snaga",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 4,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Snaga",
+          "challenge": "Minion",
+          "experience": 2,
+          "hitPoints": 4,
+          "initiative": 0,
+          "damageDice": "d4",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        }
+      ],
+      [
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Easterling",
+          "challenge": "Minion",
+          "experience": 4,
+          "hitPoints": 8,
+          "initiative": 0,
+          "damageDice": "d6",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        }
+      ],
+      [
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        },
+        {
+          "name": "Warg Rider",
+          "challenge": "Minion",
+          "experience": 6,
+          "hitPoints": 6,
+          "initiative": 2,
+          "damageDice": "d6",
+          "damageType": "Physical",
+          "actualHitPoints": 0
+        }
+      ]
+    ]
   }
 ]

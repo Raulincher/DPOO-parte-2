@@ -83,20 +83,6 @@ public class Character {
     public void setXp(int xp) {this.xp = xp;}
 
     /**
-     * Esta función servirá para actualizar el body del character
-     *
-     * @param body, que será el nuevo body del character
-     */
-    public void setBody(int body) {this.body = body;}
-
-    /**
-     * Esta función servirá para actualizar la mind del character
-     *
-     * @param mind, que será la nueva mind del character
-     */
-    public void setMind(int mind) {this.mind = mind;}
-
-    /**
      * Esta función servirá para actualizar el spirit del character
      *
      * @param spirit, que será el nuevo spirit del character
