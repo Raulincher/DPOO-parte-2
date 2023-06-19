@@ -6,7 +6,9 @@ import presentation.UIController;
 import presentation.UIManager;
 import java.io.File;
 import java.io.IOException;
-
+/**
+ * Clase Main la cual arrancará el programa
+ */
 public class Main {
 
     /**

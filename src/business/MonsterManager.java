@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * Clase MonsterManager la cual permite manejar algunos procesos de los monstruos
+ */
 public class MonsterManager {
 
     // Añadimos los componentes

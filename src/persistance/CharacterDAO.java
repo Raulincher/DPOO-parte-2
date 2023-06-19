@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
-
+/**
+ * Clase DAO de los PJs donde hablaremos con el Json para obtener la info necesaria
+ */
 public class CharacterDAO {
 
     // Añadimos atributos y json

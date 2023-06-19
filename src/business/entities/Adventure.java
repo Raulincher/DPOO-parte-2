@@ -2,7 +2,11 @@ package business.entities;
 
 import java.util.ArrayList;
 
+/**
+ * Clase aventura la cual nos permitira manejar aventuras
+ */
 public class Adventure {
+    //preparando variables
     String name;
     int encounters;
     ArrayList<ArrayList<Monster>> encounterMonsters;

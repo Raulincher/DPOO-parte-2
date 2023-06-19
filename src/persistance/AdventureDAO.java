@@ -8,6 +8,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Clase DAO de la aventura donde hablaremos con el Json para obtener la info necesaria
+ */
 public class AdventureDAO {
 
     // Añadimos atributos y json

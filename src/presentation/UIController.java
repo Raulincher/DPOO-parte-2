@@ -7,8 +7,11 @@ import business.entities.Adventure;
 import business.entities.Character;
 import business.entities.Monster;
 import java.util.ArrayList;
-
+/**
+ * Clase UI Controller el cual pasará info al manager para que muestre lo que toca
+ */
 public class UIController {
+    //preparando variables
     private final UIManager uiManager;
     private final AdventureManager adventureManager;
     private final CharacterManager characterManager;

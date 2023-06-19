@@ -9,7 +9,9 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * Clase CharacterManager la cual permite manejar algunos procesos de los PJs
+ */
 public class CharacterManager {
 
     // Añadimos los componentes

@@ -8,8 +8,12 @@ import persistance.AdventureDAO;
 import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * Clase adventureManager la cual nos permitirà manejar la propia aventura
+ */
 public class AdventureManager {
 
+    //preparando variables
     AdventureDAO adventureDAO;
     CharacterManager characterManager;
 
@@ -62,6 +66,7 @@ public class AdventureManager {
      * @param monsterOption, tipo de monstruos a añadir
      * @param lastQuantity, índice con el último añadido
      * @param monsterQuantity, cantidad de monstruos a añadir
+     * @param auxEncounter, numero de encuentro
      */
     public void setMonstersEncounter(ArrayList<Monster> monsters, ArrayList<ArrayList<Monster>> encounterMonsters, int monsterOption, int lastQuantity ,int monsterQuantity, int auxEncounter){
 

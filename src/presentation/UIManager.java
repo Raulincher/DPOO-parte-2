@@ -4,7 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-
+/**
+ * Clase UI manager que manejará todo lo visual
+ */
 public class UIManager {
 
     // Añadimos un scanner
@@ -122,7 +124,7 @@ public class UIManager {
 
     /**
      * Esta función servirá para mostrar que un jugador ha caído inconsciente
-     * No tendrá ni param ni return
+     * @param name, nombre del PJ
      */
     public void deadMessage(String name){
         showMessage(name + " falls unconscious.");

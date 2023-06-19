@@ -9,6 +9,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Clase DAO de los monstruos donde hablaremos con el Json para obtener la info necesaria
+ */
 public class MonsterDAO {
 
     // Añadimos atributos y json

@@ -3,8 +3,11 @@ package business.entities;
 import com.google.gson.annotations.Expose;
 
 import java.util.Random;
-
+/**
+ * Clase Character la cual manejará alguna info sobre los PJs
+ */
 public class Character {
+    //preparamos variables
     int actualLife, totalLife;
     @Expose
     String name, player;

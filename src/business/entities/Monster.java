@@ -1,6 +1,9 @@
 package business.entities;
-
+/**
+ * Clase Monster la cual manejará alguna info sobre los monstruos
+ */
 public class Monster {
+    //preparando variables
     String name;
     String challenge;
     int experience;
@@ -20,6 +23,8 @@ public class Monster {
      * @param monsterHitPoints, hitPoints del Monster
      * @param monsterDice, dado de daño del Monster
      * @param damageType, tipo de daño del Monster
+     * @param actualHitPoints, PV actuales del monstruo
+     * @param monsterInitiative, iniciativa del monstruo
      */
     public Monster(String monsterName, String monsterChallenge, int monsterXpDrop, int monsterHitPoints, int monsterInitiative, String monsterDice, String damageType, int actualHitPoints){
         this.name = monsterName;
