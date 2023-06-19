@@ -1,21 +1,18 @@
 package persistance;
 
-import business.entities.Character;
 import business.entities.Monster;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MonsterDAO {
 
     // Añadimos atributos y json
-    private Gson  gson;
+    private final Gson gson;
     public String monsterPath = "files/monsters.json";
 
     //Creamos constructor con todos los atributos

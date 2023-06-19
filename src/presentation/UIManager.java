@@ -1,7 +1,6 @@
 package presentation;
 
 import java.util.InputMismatchException;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 
@@ -56,6 +55,10 @@ public class UIManager {
         System.out.println("3. Continue");
     }
 
+    /**
+     * Esta función servirá para mostrar la fase de descanso después del combate
+     * No tendrá ni param ni return
+     */
     public void showRestStage(){
         System.out.println("All enemies are defeated.");
         System.out.println("--------------------");
@@ -104,46 +107,73 @@ public class UIManager {
         return scanner.nextLine();
     }
 
-
-
+    /**
+     * Esta función servirá para mostrar el mensaje correspondiente
+     * una vez el personaje ataque
+     *
+     * @param actualName, nombre del personaje
+     * @param attackedMonster, nombre del monstruo que ataca
+     */
     public void messageAttack(String actualName, String attackedMonster){
         String message = "\n" + actualName + " attacks " + attackedMonster + " with Sword slash.";
 
         showMessage(message);
     }
 
+    /**
+     * Esta función servirá para mostrar que un jugador ha caído inconsciente
+     * No tendrá ni param ni return
+     */
     public void deadMessage(String name){
         showMessage(name + " falls unconscious.");
     }
 
-
+    /**
+     * Esta función servirá para mostrar el hit y el dañó provocado,
+     * teniendo en cuenta si es crítico o si se falla
+     *
+     * @param damage, daño provocado
+     * @param isCrit, int para saber si el hit será crítico
+     */
     public void hitMessage(int damage, int isCrit){
         String message;
 
+        // Abrimos if en caso que el golpe sea crítico
         if(isCrit == 2){
             message = "Critical hit and deals " + (damage * 2) + " damage.";
-        }else if(isCrit == 1){
+        }
+        // Abrimos elseif en caso que el golpe sea normal
+        else if(isCrit == 1){
             message = "Hit and deals " + damage + " damage.";
-        }else{
+        }
+        // Cerramos conn un else en caso que se falle el golpe
+        else{
             message = "Fails and deals 0 damage.";
         }
 
         showMessage(message);
     }
 
-
+    /**
+     * Esta función servirá para mostrar que un personaje usa su habilidad en la fase de
+     * descanso
+     *
+     * @param characterName, nombre del personaje
+     * @param characterCuration, personaje que es curado
+     * @param temporalLife, vida temporal para asegurar que no está muerto
+     */
     public void showAbilitiesRestPhase(String characterName, int characterCuration, int temporalLife) {
 
         String message;
 
+        // En caso que el personaje no esté inconsciente
         if (temporalLife != 0) {
             message = characterName + " uses BandageTime. Heals " + characterCuration + " hit points";
-        } else {
+        }
+        // En caso que sí esté inconsciente
+        else {
             message = characterName + " is unconscious";
         }
-
-
         showMessage(message);
     }
-
 }

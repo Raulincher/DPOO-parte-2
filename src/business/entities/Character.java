@@ -76,6 +76,25 @@ public class Character {
     public int getSpirit() {return spirit;}
 
     /**
+     * Esta función llamará a la vida total del personaje
+     *
+     * @return totalLife, que será la vida en cuestión
+     */
+    public int getTotalLife() {
+        return totalLife;
+    }
+
+    /**
+     * Esta función llamará a la vida actual del personaje
+     * después de la lucha
+     *
+     * @return actualLife, que será la vida en cuestión
+     */
+    public int getActualLife() {
+        return actualLife;
+    }
+
+    /**
      * Esta función servirá para actualizar la experiencia del character
      *
      * @param xp, que será la nueva experiencia del character
@@ -89,20 +108,20 @@ public class Character {
      */
     public void setSpirit(int spirit) {this.spirit = spirit;}
 
-
-    public int getTotalLife() {
-        return totalLife;
-    }
-
+    /**
+     * Esta función servirá para actualizar la vida total del character
+     *
+     * @param totalLife, que será la vida en cuestión del character
+     */
     public void setTotalLife(int totalLife) {
         this.totalLife = totalLife;
     }
 
-    public int getActualLife() {
-        return actualLife;
-    }
-
-
+    /**
+     * Esta función servirá para actualizar la vida actual del character
+     *
+     * @param actualLife, que será la vida en cuestión del character
+     */
     public void setActualLife(int actualLife) {
         this.actualLife = actualLife;
     }
@@ -145,8 +164,6 @@ public class Character {
     /**
      * Esta función servirá para realizar el ataque Sword Slash
      * del adventurer
-     *
-     *
      * @return ataque del personaje
      */
     public int attack(){
@@ -173,7 +190,6 @@ public class Character {
     /**
      * Esta función genera un número entre el 1 y el 12 simulando tirar
      * un dado de 12 caras
-     *
      * La usamos en los hijos de la clase Character
      *
      * @return roll, int que será el número random generado
@@ -193,7 +209,6 @@ public class Character {
     /**
      * Esta función genera un número entre el 1 y el 6 simulando tirar
      * un dado de 6 caras
-     *
      * La usamos en los hijos de la clase Character
      *
      * @return roll, int que será el número random generado
@@ -213,7 +228,6 @@ public class Character {
     /**
      * Esta función genera un número entre el 1 y el 8 simulando tirar
      * un dado de 8 caras
-     *
      * La usamos en los hijos de la clase Character
      *
      * @return roll, int que será el número random generado

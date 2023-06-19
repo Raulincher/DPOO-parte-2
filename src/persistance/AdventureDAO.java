@@ -1,8 +1,6 @@
 package persistance;
 
 import business.entities.Adventure;
-import business.entities.Character;
-import business.entities.Monster;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

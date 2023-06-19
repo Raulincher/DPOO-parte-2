@@ -86,12 +86,21 @@ public class Monster {
         return damageDice;
     }
 
-
-    public void setActualHitPoints(int actualHitPoints) {
-        this.actualHitPoints = actualHitPoints;
-    }
-
+    /**
+     * Esta función llamará a los hitPoints actuales del Monster
+     *
+     * @return damageDice, que serán los hitPoints en cuestión
+     */
     public int getActualHitPoints() {
         return actualHitPoints;
+    }
+
+    /**
+     * Esta función servirá para actualizar los hitPoints del monster
+     *
+     * @param actualHitPoints, que serán los hitPoints del monster
+     */
+    public void setActualHitPoints(int actualHitPoints) {
+        this.actualHitPoints = actualHitPoints;
     }
 }

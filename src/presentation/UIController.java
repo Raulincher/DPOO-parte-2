@@ -37,8 +37,6 @@ public class UIController {
         int option;
         int i = 0;
         int totalCharacters = 0;
-        int totalAdventures = 0;
-        boolean validationMonster = true;
 
         // Damos la bienvenida después de crear variables
         uiManager.showMessage("Welcome to Simple LSRPG.\n");
@@ -539,7 +537,7 @@ public class UIController {
     */
     private void adventurePlay(){
         // Creamos todas las variables
-        int characterQuantity, adventureSelection, defeated = 0, counterEncounters, charactersDefeat = 0, monstersDefeat = 0;
+        int characterQuantity, adventureSelection, defeated = 0, counterEncounters, charactersDefeat = 0;
         int[] saveNumber = new int[5];
 
         // Mostramos las aventuras disponibles
@@ -743,7 +741,6 @@ public class UIController {
                 int q = 0, damage = 0, isCrit, smallestMonsterIndex, smallestCharacterIndex, totalLife, actualLife, total;
                 String[] auxName;
                 String actualName, attackedMonster, compareName, actualDice = null;
-                ArrayList<String> monstersDamage = new ArrayList<>(0);
                 boolean fail;
                 // Mostramos ronda
                 uiManager.showMessage("Round "+  (roundCounter + 1) + ":");
@@ -768,7 +765,6 @@ public class UIController {
                 // Iniciamos bucle para la batalla
                 while(q < listOfPriorities.size()){
                     isCrit = characterManager.diceRollD10();
-                    i = 0;
                     //indice del enemigo con menos vida
                     smallestMonsterIndex = adventureManager.smallestEnemyLife(monstersInEncounter);
                     //indice del personaje con menos vida
@@ -958,7 +954,6 @@ public class UIController {
                 boolean levelUp;
                 //Cogemos toda la XP del encuentro y la repartimos entre todos los miembros de la party por igual. Todos recibirán toda la cantidad
                 i = 0;
-                boolean evolved;
 
                 //bucle que mostrara la cantidad de XP ganada por el PJ + la posible subida de nivel del mismo
                 while(i < characterQuantity){
